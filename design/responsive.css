@@ -1,0 +1,259 @@
+/* Standardized Responsive Design System for TechXpert */
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+/* 
+  Breakpoint System:
+  - xs: 0px - 575px (Mobile)
+  - sm: 576px - 767px (Large Mobile)
+  - md: 768px - 991px (Tablet)
+  - lg: 992px - 1199px (Desktop)
+  - xl: 1200px - 1399px (Large Desktop)
+  - xxl: 1400px+ (Extra Large Desktop)
+*/
+
+/* ===== MOBILE FIRST APPROACH ===== */
+/* Base styles are mobile-first, then enhanced for larger screens */
+
+/* ===== EXTRA SMALL DEVICES (Mobile) ===== */
+@media (max-width: 575.98px) {
+    /* Typography */
+    h1 { font-size: 1.75rem !important; }
+    h2 { font-size: 1.5rem !important; }
+    h3 { font-size: 1.25rem !important; }
+    h4 { font-size: 1.125rem !important; }
+    h5 { font-size: 1rem !important; }
+    h6 { font-size: 0.875rem !important; }
+    
+    /* Spacing */
+    .container { padding: 0 1rem !important; }
+    .section { padding: 2rem 1rem !important; }
+    
+    /* Navigation */
+    .cyber-header { padding: 0 1rem !important; }
+    .nav-container { min-height: 60px !important; }
+    .logo-container h1 { font-size: 1.2rem !important; }
+    .cyber-logo { width: 35px !important; height: 35px !important; }
+    
+    /* Grid Layouts */
+    .courses-grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
+    .course-features { grid-template-columns: 1fr !important; }
+    
+    /* Buttons */
+    .btn { width: 100% !important; margin-bottom: 0.5rem !important; }
+    .btn-group { flex-direction: column !important; }
+}
+
+/* ===== SMALL DEVICES (Large Mobile) ===== */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    /* Typography */
+    h1 { font-size: 2rem !important; }
+    h2 { font-size: 1.75rem !important; }
+    h3 { font-size: 1.5rem !important; }
+    
+    /* Spacing */
+    .container { padding: 0 1.5rem !important; }
+    .section { padding: 2.5rem 1.5rem !important; }
+    
+    /* Grid Layouts */
+    .courses-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; }
+    .course-features { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important; }
+}
+
+/* ===== MEDIUM DEVICES (Tablet) ===== */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* Typography */
+    h1 { font-size: 2.5rem !important; }
+    h2 { font-size: 2rem !important; }
+    h3 { font-size: 1.75rem !important; }
+    
+    /* Spacing */
+    .container { padding: 0 2rem !important; }
+    .section { padding: 3rem 2rem !important; }
+    
+    /* Navigation */
+    .cyber-header { padding: 0 2rem !important; }
+    .nav-container { min-height: 70px !important; }
+    
+    /* Grid Layouts */
+    .courses-grid { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important; }
+    .course-features { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important; }
+}
+
+/* ===== LARGE DEVICES (Desktop) ===== */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    /* Typography */
+    h1 { font-size: 3rem !important; }
+    h2 { font-size: 2.5rem !important; }
+    h3 { font-size: 2rem !important; }
+    
+    /* Spacing */
+    .container { padding: 0 2.5rem !important; }
+    .section { padding: 4rem 2.5rem !important; }
+    
+    /* Navigation */
+    .cyber-header { padding: 0 2.5rem !important; }
+    .nav-container { min-height: 80px !important; }
+    
+    /* Grid Layouts */
+    .courses-grid { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important; }
+    .course-features { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; }
+}
+
+/* ===== EXTRA LARGE DEVICES (Large Desktop) ===== */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    /* Typography */
+    h1 { font-size: 3.5rem !important; }
+    h2 { font-size: 3rem !important; }
+    h3 { font-size: 2.25rem !important; }
+    
+    /* Spacing */
+    .container { padding: 0 3rem !important; }
+    .section { padding: 5rem 3rem !important; }
+    
+    /* Navigation */
+    .cyber-header { padding: 0 3rem !important; }
+    .nav-container { min-height: 80px !important; }
+    
+    /* Grid Layouts */
+    .courses-grid { grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)) !important; }
+    .course-features { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important; }
+}
+
+/* ===== EXTRA EXTRA LARGE DEVICES (Extra Large Desktop) ===== */
+@media (min-width: 1400px) {
+    /* Typography */
+    h1 { font-size: 4rem !important; }
+    h2 { font-size: 3.5rem !important; }
+    h3 { font-size: 2.5rem !important; }
+    
+    /* Spacing */
+    .container { padding: 0 4rem !important; }
+    .section { padding: 6rem 4rem !important; }
+    
+    /* Navigation */
+    .cyber-header { padding: 0 4rem !important; }
+    .nav-container { min-height: 80px !important; }
+    
+    /* Grid Layouts */
+    .courses-grid { grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)) !important; }
+    .course-features { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important; }
+}
+
+/* ===== LANDSCAPE ORIENTATION ADJUSTMENTS ===== */
+@media (orientation: landscape) and (max-height: 500px) {
+    .cyber-header { min-height: 60px !important; }
+    .nav-container { min-height: 60px !important; }
+    .section { padding: 1.5rem 2rem !important; }
+}
+
+/* ===== HIGH DPI DISPLAYS ===== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .cyber-logo { image-rendering: -webkit-optimize-contrast !important; }
+    .course-icon { image-rendering: -webkit-optimize-contrast !important; }
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (prefers-contrast: high) {
+    :root {
+        --border: #ffffff !important;
+        --text-secondary: #ffffff !important;
+        --card-bg: #000000 !important;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .cyber-header, .mobile-sidebar, .sidebar-backdrop { display: none !important; }
+    .course-card { break-inside: avoid !important; }
+    body { background: white !important; color: black !important; }
+}
+
+/* ===== UTILITY CLASSES FOR RESPONSIVE DESIGN ===== */
+.hidden-xs { display: none !important; }
+.hidden-sm { display: none !important; }
+.hidden-md { display: none !important; }
+.hidden-lg { display: none !important; }
+.hidden-xl { display: none !important; }
+
+.visible-xs { display: block !important; }
+.visible-sm { display: block !important; }
+.visible-md { display: block !important; }
+.visible-lg { display: block !important; }
+.visible-xl { display: block !important; }
+
+/* Responsive visibility classes */
+@media (max-width: 575.98px) {
+    .hidden-xs { display: block !important; }
+    .visible-sm, .visible-md, .visible-lg, .visible-xl { display: none !important; }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .hidden-sm { display: block !important; }
+    .visible-xs, .visible-md, .visible-lg, .visible-xl { display: none !important; }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .hidden-md { display: block !important; }
+    .visible-xs, .visible-sm, .visible-lg, .visible-xl { display: none !important; }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .hidden-lg { display: block !important; }
+    .visible-xs, .visible-sm, .visible-md, .visible-xl { display: none !important; }
+}
+
+@media (min-width: 1200px) {
+    .hidden-xl { display: block !important; }
+    .visible-xs, .visible-sm, .visible-md, .visible-lg { display: none !important; }
+}
+
+/* ===== RESPONSIVE SPACING UTILITIES ===== */
+.responsive-padding {
+    padding: 1rem;
+}
+
+@media (min-width: 576px) {
+    .responsive-padding { padding: 1.5rem; }
+}
+
+@media (min-width: 768px) {
+    .responsive-padding { padding: 2rem; }
+}
+
+@media (min-width: 992px) {
+    .responsive-padding { padding: 2.5rem; }
+}
+
+@media (min-width: 1200px) {
+    .responsive-padding { padding: 3rem; }
+}
+
+/* ===== RESPONSIVE TYPOGRAPHY UTILITIES ===== */
+.responsive-text {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+@media (min-width: 576px) {
+    .responsive-text { font-size: 1.125rem; }
+}
+
+@media (min-width: 768px) {
+    .responsive-text { font-size: 1.25rem; }
+}
+
+@media (min-width: 992px) {
+    .responsive-text { font-size: 1.375rem; }
+}
+
+@media (min-width: 1200px) {
+    .responsive-text { font-size: 1.5rem; }
+}

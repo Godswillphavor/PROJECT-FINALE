@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Native Development - TechXpert</title>
+
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="../design/styles.css" as="style">
+    <link rel="preload" href="../design/responsive.css" as="style">
+    <link rel="preload" href="../COURSE-DET/course-styles.css" as="style>
+<link rel="preload" href="../images/techxpert-terminal.png" as="image">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../design/styles.css">
+    <link rel="preload" href="../design/responsive.css" as="style">
+    <link rel="stylesheet" href="../COURSE-DET/course-styles.css">
+    <link rel="shortcut icon" href="../images/techxpert-terminal.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="cyber-header">
+        <nav class="nav-container">
+            <div class="logo-container">
+                <img src="../images/techxpert-terminal.png" alt="TechXpert Logo" class="cyber-logo" width="60" height="60">
+                <h1>Tech<b>X</b>pert</h1>
+            </div>
+            <!-- Hamburger Icon for Mobile (added for unified style) -->
+            <button class="hamburger" id="hamburger-menu" aria-label="Open menu" aria-controls="mobile-sidebar" aria-expanded="false">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+            <div class="cyber-search">
+                <input type="text" class="search-input" placeholder="Search Courses...">
+                <i class="fas fa-search"></i>
+            </div>
+            <nav class="nav-menu nav-links" id="main-menu" role="navigation" aria-label="Main menu">
+                <a href="../generics/home.html" class="nav-link">Home</a>
+                <a href="../generics/dashboard.html" class="nav-link">Dashboard</a>
+                <div class="dropdown">
+                    <a href="#" class="nav-link dropdown-trigger">Courses</a>
+                    <div class="dropdown-content">
+                        <div class="crse-wrapper">
+                            <div class="crse-col">
+                                <div id="side-icon">
+                                    <span class="crse-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                                    <div class="crse-title">COURSES</div>
+                                </div>
+                                <ul class="crse-list">
+                                    <li><a href="../courses/web-development.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-code"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">WEB DEVELOPMENT</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../courses/cybersecurity.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-shield-halved"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">CYBERSECURITY</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../courses/software-development.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-laptop-code"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">SOFTWARE DEVELOPMENT</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../courses/ui-ux.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-palette"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">UI/UX</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../courses/data-analysis.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-chart-simple"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">Data Analysis</div>
+                                            </div>
+                                        </a>
+                                </ul>
+                            </div>
+                            <div class="crse-col">
+                                <div id="side-icon">
+                                    <span class="crse-icon"><i class="fa-solid fa-code"></i></span>
+                                    <div class="crse-title">PROGRAMMING LANGUAGES</div>
+                                </div>
+                                <ul class="crse-list">
+                                    <li><a href="../Languages/javascript.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-js"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">JAVASCRIPT</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../Languages/rust.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-rust"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">RUST</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../Languages/solidity.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-cube"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">SOLIDITY</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../Languages/sql.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-database"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">SQL</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../Languages/php.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-php"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">PHP</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../Languages/python.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-python"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">PYTHON</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="crse-col">
+                                <div id="side-icon">
+                                    <span class="crse-icon"><i class="fa-solid fa-layer-group"></i></span>
+                                    <div class="crse-title">FRAMEWORKS</div>
+                                </div>
+                                <ul class="crse-list">
+                                    <li><a href="bootstrap.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-bootstrap"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">BOOTSTRAP</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="tailwind.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-wind"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">TAILWIND</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="django.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-python"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">DJANGO</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="react.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-react"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">REACT JS</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="node.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-node-js"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">NODE JS</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="native.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-mobile-screen"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">NATIVE</div>
+                                            </div>
+                                        </a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="explore-courses-btn" onclick="window.location.href='../courses/all-courses.html'">
+                            EXPLORE COURSES
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="nav-link">
+                    <div class="profile-dropdown">
+                        <div id="nav-pfp">
+                            <img src="../images/pic-1.jpg" class="logo" alt="Profile Picture of Godswill Favour">
+                        </div>
+                        <div class="profile-dropdown-content">
+                            <div class="profile-header">
+                                <img src="../images/pic-1.jpg" alt="Profile Picture of Godswill Favour">
+                                <div class="profile-info">
+                                    <h3>Godswill Favour</h3>
+                                    <p>Student</p>
+                                </div>
+                            </div>
+                            <ul class="profile-menu">
+                                <li><a href="#"><i class="fas fa-user"></i> My Profile</a></li>
+                                <li><a href="../generics/dashboard.html"><i class="fas fa-dashboard"></i> Dashboard</a></li>
+                                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                                <li><a href="#"><i class="fas fa-book"></i> My Courses</a></li>
+                                <li><a href="#"><i class="fas fa-certificate"></i> Certificates</a></li>
+                                <li class="theme-toggle">
+                                    <button class="theme-switch" aria-label="Toggle dark mode">
+                                        <span class="switch-track">
+                                            <span class="switch-icon moon"><i class="fas fa-moon"></i></span>
+                                            <span class="switch-icon sun"><i class="fas fa-sun"></i></span>
+                                            <span class="switch-knob"></span>
+                                        </span>
+                                    </button>
+                                </li>
+                                <li class="logout"><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+            </nav>
+        </nav>
+    </header>
+    <!-- Sidebar for Mobile (added for unified style) -->
+    <aside class="mobile-sidebar" id="mobile-sidebar" aria-hidden="true">
+        <div class="sidebar-header">
+            <span class="sidebar-logo"><img src="../images/techxpert-terminal.png" alt="TechXpert Logo" width="40"><h1>Tech<b>X</b>pert</h1></span>
+            <button class="close-sidebar" id="close-sidebar" aria-label="Close menu">&times;</button>
+        </div>
+        <div class="sidebar-links">
+            <a href="../generics/home.html" class="sidebar-link">Home</a>
+            <a href="../generics/dashboard.html" class="sidebar-link">Dashboard</a>
+            <div class="dropdown">
+                <a href="#" class="sidebar-link dropdown-trigger">Courses</a>
+                <div class="dropdown-content">
+                    <div class="crse-wrapper">
+                        <div class="crse-col">
+                            <div id="side-icon">
+                                <span class="crse-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                                <div class="crse-title">COURSES</div>
+                            </div>
+                            <ul class="crse-list">
+                                <li><a href="../courses/web-development.html"><span class="crse-icon"><i class="fa-solid fa-code"></i></span><div class="crse-content"><div class="crse-main">WEB DEVELOPMENT</div></div></a></li>
+                                <li><a href="../courses/cybersecurity.html"><span class="crse-icon"><i class="fa-solid fa-shield-halved"></i></span><div class="crse-content"><div class="crse-main">CYBERSECURITY</div></div></a></li>
+                                <li><a href="../courses/software-development.html"><span class="crse-icon"><i class="fa-solid fa-laptop-code"></i></span><div class="crse-content"><div class="crse-main">SOFTWARE DEVELOPMENT</div></div></a></li>
+                                <li><a href="../courses/ui-ux.html"><span class="crse-icon"><i class="fa-solid fa-palette"></i></span><div class="crse-content"><div class="crse-main">UI/UX</div></div></a></li>
+                                <li><a href="../courses/data-analysis.html"><span class="crse-icon"><i class="fa-solid fa-chart-simple"></i></span><div class="crse-content"><div class="crse-main">Data Analysis</div></div></a></li>
+                            </ul>
+                        </div>
+                        <div class="crse-col">
+                            <div id="side-icon">
+                                <span class="crse-icon"><i class="fa-solid fa-code"></i></span>
+                                <div class="crse-title">PROGRAMMING LANGUAGES</div>
+                            </div>
+                            <ul class="crse-list">
+                                <li><a href="../Languages/javascript.html"><span class="crse-icon"><i class="fa-brands fa-js"></i></span><div class="crse-content"><div class="crse-main">JAVASCRIPT</div></div></a></li>
+                                <li><a href="../Languages/rust.html"><span class="crse-icon"><i class="fa-brands fa-rust"></i></span><div class="crse-content"><div class="crse-main">RUST</div></div></a></li>
+                                <li><a href="../Languages/solidity.html"><span class="crse-icon"><i class="fa-solid fa-cube"></i></span><div class="crse-content"><div class="crse-main">SOLIDITY</div></div></a></li>
+                                <li><a href="../Languages/sql.html"><span class="crse-icon"><i class="fa-solid fa-database"></i></span><div class="crse-content"><div class="crse-main">SQL</div></div></a></li>
+                                <li><a href="../Languages/php.html"><span class="crse-icon"><i class="fa-brands fa-php"></i></span><div class="crse-content"><div class="crse-main">PHP</div></div></a></li>
+                                <li><a href="../Languages/python.html"><span class="crse-icon"><i class="fa-brands fa-python"></i></span><div class="crse-content"><div class="crse-main">PYTHON</div></div></a></li>
+                            </ul>
+                        </div>
+                        <div class="crse-col">
+                            <div id="side-icon">
+                                <span class="crse-icon"><i class="fa-solid fa-layer-group"></i></span>
+                                <div class="crse-title">FRAMEWORKS</div>
+                            </div>
+                            <ul class="crse-list">
+                                <li><a href="bootstrap.html"><span class="crse-icon"><i class="fa-brands fa-bootstrap"></i></span><div class="crse-content"><div class="crse-main">BOOTSTRAP</div></div></a></li>
+                                <li><a href="tailwind.html"><span class="crse-icon"><i class="fa-solid fa-wind"></i></span><div class="crse-content"><div class="crse-main">TAILWIND</div></div></a></li>
+                                <li><a href="django.html"><span class="crse-icon"><i class="fa-brands fa-python"></i></span><div class="crse-content"><div class="crse-main">DJANGO</div></div></a></li>
+                                <li><a href="react.html"><span class="crse-icon"><i class="fa-brands fa-react"></i></span><div class="crse-content"><div class="crse-main">REACT JS</div></div></a></li>
+                                <li><a href="node.html"><span class="crse-icon"><i class="fa-brands fa-node-js"></i></span><div class="crse-content"><div class="crse-main">NODE JS</div></div></a></li>
+                                <li><a href="native.html"><span class="crse-icon"><i class="fa-solid fa-mobile-screen"></i></span><div class="crse-content"><div class="crse-main">NATIVE</div></div></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="explore-courses-btn" onclick="window.location.href='../courses/all-courses.html'">
+                        EXPLORE COURSES
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+
+
+    <!-- Course Content -->
+    <main class="hero-section" role="main">
+        <div class="course-header">
+            <div class="course-info">
+                <h1>Native Development</h1>
+                <div class="course-meta">
+                    <span><i class="fas fa-clock"></i> 32 Weeks</span>
+                    <span><i class="fas fa-signal"></i> Beginner to Advanced</span>
+                    <span><i class="fas fa-users"></i> 28,000+ Students</span>
+                </div>
+                <div class="course-rating">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span>4.9 (3,500+ reviews)</span>
+                </div>
+            </div>
+            <div class="course-actions">
+                <button class="enroll-btn">Enroll Now</button>
+                <button class="preview-btn">Preview Course</button>
+            </div>
+        </div>
+
+        <div class="course-grid">
+            <!-- Course Overview -->
+            <section class="course-section">
+                <h2>Course Overview</h2>
+                <p>Master native mobile app development for both iOS and Android platforms. Learn Swift and Kotlin programming, platform-specific features, and best practices for building high-performance mobile applications.</p>
+                <div class="course-features">
+                    <div class="feature">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>iOS & Android</h3>
+                        <p>Native Development</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-code"></i>
+                        <h3>Swift & Kotlin</h3>
+                        <p>Modern Languages</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Performance</h3>
+                        <p>Native Speed</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Course Curriculum -->
+            <section class="course-section">
+                <h2>Curriculum</h2>
+                <div class="curriculum-list">
+                    <div class="module">
+                        <div class="module-header">
+                            <h3>Module 1: Mobile Development Fundamentals</h3>
+                            <span class="duration">4 weeks</span>
+                        </div>
+                        <ul class="lessons">
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Introduction to Mobile Development</span>
+                                <span class="lesson-duration">180 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Platform Architecture</span>
+                                <span class="lesson-duration">200 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Development Environment Setup</span>
+                                <span class="lesson-duration">180 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Basic UI Components</span>
+                                <span class="lesson-duration">150 min</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="module">
+                        <div class="module-header">
+                            <h3>Module 2: iOS Development</h3>
+                            <span class="duration">5 weeks</span>
+                        </div>
+                        <ul class="lessons">
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Swift Fundamentals</span>
+                                <span class="lesson-duration">200 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>UIKit & SwiftUI</span>
+                                <span class="lesson-duration">180 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>iOS App Architecture</span>
+                                <span class="lesson-duration">180 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>iOS App Lifecycle</span>
+                                <span class="lesson-duration">150 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>iOS UI Components</span>
+                                <span class="lesson-duration">180 min</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="module">
+                        <div class="module-header">
+                            <h3>Module 3: Android Development</h3>
+                            <span class="duration">5 weeks</span>
+                        </div>
+                        <ul class="lessons">
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Kotlin Fundamentals</span>
+                                <span class="lesson-duration">200 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Android UI Components</span>
+                                <span class="lesson-duration">180 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Activity Lifecycle</span>
+                                <span class="lesson-duration">180 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Android Architecture</span>
+                                <span class="lesson-duration">150 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Material Design</span>
+                                <span class="lesson-duration">180 min</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="module">
+                        <div class="module-header">
+                            <h3>Module 4: Data Management</h3>
+                            <span class="duration">4 weeks</span>
+                        </div>
+                        <ul class="lessons">
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Local Storage</span>
+                                <span class="lesson-duration">180 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>SQLite & Room</span>
+                                <span class="lesson-duration">200 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Core Data</span>
+                                <span class="lesson-duration">180 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>REST API Integration</span>
+                                <span class="lesson-duration">150 min</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="module">
+                        <div class="module-header">
+                            <h3>Module 5: Advanced Features</h3>
+                            <span class="duration">4 weeks</span>
+                        </div>
+                        <ul class="lessons">
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Push Notifications</span>
+                                <span class="lesson-duration">180 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Location Services</span>
+                                <span class="lesson-duration">200 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Camera & Media</span>
+                                <span class="lesson-duration">180 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Background Processing</span>
+                                <span class="lesson-duration">150 min</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="module">
+                        <div class="module-header">
+                            <h3>Module 6: Testing & Debugging</h3>
+                            <span class="duration">3 weeks</span>
+                        </div>
+                        <ul class="lessons">
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Unit Testing</span>
+                                <span class="lesson-duration">180 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>UI Testing</span>
+                                <span class="lesson-duration">200 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Performance Testing</span>
+                                <span class="lesson-duration">180 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Debugging Tools</span>
+                                <span class="lesson-duration">150 min</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="module">
+                        <div class="module-header">
+                            <h3>Module 7: Deployment & Distribution</h3>
+                            <span class="duration">3 weeks</span>
+                        </div>
+                        <ul class="lessons">
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>App Store Guidelines</span>
+                                <span class="lesson-duration">180 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>App Signing & Certificates</span>
+                                <span class="lesson-duration">200 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>App Store Submission</span>
+                                <span class="lesson-duration">180 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Play Store Submission</span>
+                                <span class="lesson-duration">150 min</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="module">
+                        <div class="module-header">
+                            <h3>Module 8: Project Development</h3>
+                            <span class="duration">4 weeks</span>
+                        </div>
+                        <ul class="lessons">
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Project Planning</span>
+                                <span class="lesson-duration">180 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Cross-Platform Development</span>
+                                <span class="lesson-duration">200 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Feature Implementation</span>
+                                <span class="lesson-duration">180 min</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-play-circle"></i>
+                                <span>Testing & Deployment</span>
+                                <span class="lesson-duration">150 min</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Instructor Section -->
+            <section class="course-section">
+                <h2>Your Instructor</h2>
+                <div class="instructor-profile">
+                    <img src="https://randomuser.me/api/portraits/women/7.jpg" alt="Instructor">
+                    <div class="instructor-info">
+                        <h3>Emma Rodriguez</h3>
+                        <p class="title">Senior Mobile Developer & React Native Expert</p>
+                        <p class="bio">7+ years of experience in mobile development. Former lead developer at Airbnb. Specialized in building high-performance cross-platform applications.</p>
+                        <div class="instructor-stats">
+                            <span><i class="fas fa-star"></i> 4.9 Rating</span>
+                            <span><i class="fas fa-users"></i> 35,000+ Students</span>
+                            <span><i class="fas fa-play-circle"></i> 10 Courses</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+<script src="../JS/script.js"></script>
+<script src="../JS/auth.js"></script> 
+
+
+
+
+
+
+<!-- VOICE FLOW AI ASSISTANT -->
+
+<script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '687097057f5efc148cd14893' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          voice: {
+            url: "https://runtime-api.voiceflow.com"
+          }
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+
+
+
+
+
+</body>
+</html>

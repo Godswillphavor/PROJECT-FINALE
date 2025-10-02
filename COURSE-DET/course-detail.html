@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechXpert - Course Library</title>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="../design/styles.css" as="style">
+    <link rel="preload" href="../design/responsive.css" as="style">
+    <link rel="stylesheet" href="course-styles.css" as="style>
+    <link rel="preload" href="../images/techxpert-terminal.png" as="image">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../design/styles.css">
+    <link rel="preload" href="../design/responsive.css">
+    <link rel="stylesheet" href="course-styles.css">
+    <link rel="shortcut icon" href="../images/techxpert-terminal.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Header Component Container -->
+    <div id="header-container"></div>
+<!-- Load the component loader script -->
+<script src="components/component-loader.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        ComponentLoader.load('header', '#header-container');
+    });
+    </script>
+
+<script src="../JS/auth.js"></script>
+<script src="../JS/script.js"></script>
+
+
+
+    <!-- Navigation Header -->
+    <header class="cyber-header">
+        <nav class="nav-container">
+            <div class="logo-container">
+                <img src="../images/techxpert-terminal.png" alt="TechXpert Logo" class="cyber-logo" width="60" height="60">
+                <h1>Tech<b>X</b>pert</h1>
+            </div>
+            <!-- Hamburger Icon for Mobile (added for unified style) -->
+            <button class="hamburger" id="hamburger-menu" aria-label="Open menu" aria-controls="mobile-sidebar" aria-expanded="false">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+            <div class="cyber-search">
+                <input type="text" class="search-input" placeholder="Search Courses...">
+                <i class="fas fa-search"></i>
+            </div>
+            <nav class="nav-menu nav-links" id="main-menu" role="navigation" aria-label="Main menu">
+                <a href="../generics/home.html" class="nav-link">Home</a>
+                <a href="../generics/dashboard.html" class="nav-link">Dashboard</a>
+                <div class="dropdown">
+                    <a href="#" class="nav-link dropdown-trigger">Courses</a>
+                    <div class="dropdown-content">
+                        <div class="crse-wrapper">
+                            <div class="crse-col">
+                                <div id="side-icon">
+                                    <span class="crse-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                                    <div class="crse-title">COURSES</div>
+                                </div>
+                                <ul class="crse-list">
+                                    <li><a href="../courses/web-development.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-code"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">WEB DEVELOPMENT</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../courses/data-analysis.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-shield-halved"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">CYBERSECURITY</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../courses/software-development.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-laptop-code"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">SOFTWARE DEVELOPMENT</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../courses/ui-ux.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-palette"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">UI/UX</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../courses/data-analysis.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-chart-simple"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">Data Analysis</div>
+                                            </div>
+                                        </a>
+                                </ul>
+                            </div>
+                            <div class="crse-col">
+                                <div id="side-icon">
+                                    <span class="crse-icon"><i class="fa-solid fa-code"></i></span>
+                                    <div class="crse-title">PROGRAMMING LANGUAGES</div>
+                                </div>
+                                <ul class="crse-list">
+                                            <li><a href="../Languages/javascript.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-js"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">JAVASCRIPT</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../Languages/rust.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-rust"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">RUST</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../Languages/solidity.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-cube"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">SOLIDITY</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../Languages/sql.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-database"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">SQL</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../Languages/php.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-php"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">PHP</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../Languages/python.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-python"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">PYTHON</div>
+                                            </div>
+                                        </a>
+                                </ul>
+                            </div>
+                            <div class="crse-col">
+                                <div id="side-icon">
+                                    <span class="crse-icon"><i class="fa-solid fa-layer-group"></i></span>
+                                    <div class="crse-title">FRAMEWORKS</div>
+                                </div>
+                                <ul class="crse-list">
+                                    <li><a href="../frameworks/bootstrap.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-bootstrap"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">BOOTSTRAP</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../frameworks/tailwind.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-wind"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">TAILWIND</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../frameworks/django.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-python"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">DJANGO</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../frameworks/react.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-react"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">REACT JS</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../frameworks/node.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-node-js"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">NODE JS</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="../frameworks/native.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-mobile-screen"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">NATIVE</div>
+                                            </div>
+                                        </a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="explore-courses-btn" onclick="window.location.href='all-courses.html'">
+                            EXPLORE COURSES
+                        </div>
+                    </div>
+                </div>
+                <!-- <a href="#" class="nav-link"> -->
+                    <div class="profile-dropdown">
+                      <div id="nav-pfp">
+                        <img src="../images/pic-1.jpg" class="logo" alt="Profile Picture of Godswill Favour">
+                    </div>
+                        <div class="profile-dropdown-content">
+                          <div class="profile-header">
+                            <img src="../images/pic-1.jpg" alt="Profile Picture of Godswill Favour">
+                            <div class="profile-info">
+                                <h3>Godswill Favour</h3>
+                                <p>Student</p>
+                            </div>
+                        </div>
+                            <ul class="profile-menu">
+                                <li><a href="#"><i class="fas fa-user"></i> My Profile</a></li>
+                                <li><a href="../generics/dashboard.html"><i class="fas fa-dashboard"></i> Dashboard</a></li>
+                                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                                <li><a href="../COURSE-DET/course-detail.html"><i class="fas fa-book"></i>Courses</a></li>
+                                <li><a href="#"><i class="fas fa-certificate"></i> Certificates</a></li>
+                                <li class="theme-toggle">
+                                    <button class="theme-switch" aria-label="Toggle dark mode">
+                                        <span class="switch-track">
+                                            <span class="switch-icon moon"><i class="fas fa-moon"></i></span>
+                                            <span class="switch-icon sun"><i class="fas fa-sun"></i></span>
+                                            <span class="switch-knob"></span>
+                                        </span>
+                                    </button>
+                                </li>
+                                <li class="logout"><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                <!-- </a> -->
+            </nav>
+        </nav>
+    </header>
+    <!-- Sidebar for Mobile (added for unified style) -->
+    <aside class="mobile-sidebar" id="mobile-sidebar" aria-hidden="true">
+        <div class="sidebar-header">
+            <span class="sidebar-logo"><img src="../images/techxpert-terminal.png" alt="TechXpert Logo" width="40"><h1>Tech<b>X</b>pert</h1></span>
+            <button class="close-sidebar" id="close-sidebar" aria-label="Close menu">&times;</button>
+        </div>
+        <!-- <div class="sidebar-links">
+            <a href="home.html" class="sidebar-link">Home</a>
+            <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+            <a href="course-detail.html" class="sidebar-link">Courses</a>
+        </div>
+        <div class="sidebar-profile-section">
+            <div class="profile-header">
+                <img src="../images/pic-1.jpg" alt="Profile Picture of Godswill Favour">
+                <div class="profile-info">
+                    <h3>Godswill Favour</h3>
+                    <p>Student</p>
+                </div>
+            </div>
+        </div> -->
+    </aside>
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+
+
+
+
+    <main class="course-library-container">
+        <!-- Course Header Section -->
+        <section class="course-header animate-in">
+            <div class="course-badge">
+                <i class="fas fa-sparkles"></i>
+                COURSE LIBRARY
+            </div>
+            <h1 class="course-title">
+                Master Programming <span class="highlight">Skills</span>
+            </h1>
+            <p class="course-subtitle">
+                Choose from our comprehensive collection of interactive courses, designed by industry experts to take you from beginner to professional.
+            </p>
+        </section>
+
+        <!-- Search and Filter Section -->
+        <section class="search-filter-section animate-in">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search courses...">
+            </div>
+            <div class="filter-dropdown">
+                <select class="filter-select" id="level-filter">
+                    <option value="">All Levels</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+            </div>
+            <div class="filter-dropdown">
+                <select class="filter-select" id="category-filter">
+                    <option value="">All Categories</option>
+                    <option value="courses">Courses</option>
+                    <option value="languages">Programming Languages</option>
+                    <option value="frameworks">Frameworks</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Courses Count -->
+        <div class="courses-count animate-in">
+            <i class="fas fa-file-text"></i>
+            <span id="courses-count">24</span> courses available
+        </div>
+
+        <!-- Courses Grid -->
+        <section class="courses-grid animate-in" id="courses-grid">
+            <!-- Course Categories -->
+            <div class="course-card" data-category="courses" data-level="beginner" onclick="startCourse('courses/web-development')">
+                <div class="course-header-card">
+                    <div class="course-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="difficulty-badge difficulty-beginner">Beginner</span>
+                        <h3 class="course-title-card">Web Development</h3>
+                    </div>
+                </div>
+                <p class="course-description">
+                    Master modern web development with HTML5, CSS3, JavaScript, and responsive design principles.
+                </p>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>12h</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.9</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>3.2k</span>
+                    </div>
+                </div>
+                <div class="course-tags">
+                    <span class="tag">html</span>
+                    <span class="tag">css</span>
+                    <span class="tag">javascript</span>
+                    <span class="tag">responsive</span>
+                </div>
+                <button class="start-learning-btn">
+                    <i class="fas fa-play"></i>
+                    Start Learning
+                </button>
+            </div>
+
+            <div class="course-card" data-category="courses" data-level="intermediate" onclick="startCourse('courses/cybersecurity')">
+                <div class="course-header-card">
+                    <div class="course-icon">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="difficulty-badge difficulty-intermediate">Intermediate</span>
+                        <h3 class="course-title-card">Cybersecurity</h3>
+                    </div>
+                </div>
+                <p class="course-description">
+                    Learn ethical hacking, network security, and protect systems from cyber threats.
+                </p>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>15h</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.8</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>2.8k</span>
+                    </div>
+                </div>
+                <div class="course-tags">
+                    <span class="tag">security</span>
+                    <span class="tag">networking</span>
+                    <span class="tag">ethical hacking</span>
+                </div>
+                <button class="start-learning-btn">
+                    <i class="fas fa-play"></i>
+                    Start Learning
+                </button>
+            </div>
+
+            <div class="course-card" data-category="courses" data-level="intermediate" onclick="startCourse('courses/software-development')">
+                <div class="course-header-card">
+                    <div class="course-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="difficulty-badge difficulty-intermediate">Intermediate</span>
+                        <h3 class="course-title-card">Software Development</h3>
+                    </div>
+                </div>
+                <p class="course-description">
+                    Build robust software applications using modern development practices and tools.
+                </p>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>18h</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.7</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>2.5k</span>
+                    </div>
+                </div>
+                <div class="course-tags">
+                    <span class="tag">software</span>
+                    <span class="tag">development</span>
+                    <span class="tag">best practices</span>
+                </div>
+                <button class="start-learning-btn">
+                    <i class="fas fa-play"></i>
+                    Start Learning
+                </button>
+            </div>
+
+            <div class="course-card" data-category="courses" data-level="beginner" onclick="startCourse('courses/ui-ux')">
+                <div class="course-header-card">
+                    <div class="course-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="difficulty-badge difficulty-beginner">Beginner</span>
+                        <h3 class="course-title-card">UI/UX Design</h3>
+                    </div>
+                </div>
+                <p class="course-description">
+                    Create beautiful and intuitive user interfaces with modern design principles.
+                </p>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>10h</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.6</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>1.9k</span>
+                    </div>
+                </div>
+                <div class="course-tags">
+                    <span class="tag">design</span>
+                    <span class="tag">ui</span>
+                    <span class="tag">ux</span>
+                    <span class="tag">prototyping</span>
+                </div>
+                <button class="start-learning-btn">
+                    <i class="fas fa-play"></i>
+                    Start Learning
+                </button>
+            </div>
+
+            <div class="course-card" data-category="courses" data-level="intermediate" onclick="startCourse('courses/data-analysis')">
+                <div class="course-header-card">
+                    <div class="course-icon">
+                        <i class="fas fa-chart-simple"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="difficulty-badge difficulty-intermediate">Intermediate</span>
+                        <h3 class="course-title-card">Data Analysis</h3>
+                    </div>
+                </div>
+                <p class="course-description">
+                    Analyze data, create insights, and make data-driven decisions with modern tools.
+                </p>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>14h</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.8</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>2.3k</span>
+                    </div>
+                </div>
+                <div class="course-tags">
+                    <span class="tag">data</span>
+                    <span class="tag">analysis</span>
+                    <span class="tag">visualization</span>
+                </div>
+                <button class="start-learning-btn">
+                    <i class="fas fa-play"></i>
+                    Start Learning
+                </button>
+            </div>
+
+            <!-- Programming Languages -->
+            <div class="course-card" data-category="languages" data-level="beginner" onclick="startCourse('Languages/javascript')">
+                <div class="course-header-card">
+                    <div class="course-icon">
+                        <i class="fa-brands fa-js"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="difficulty-badge difficulty-beginner">Beginner</span>
+                        <h3 class="course-title-card">JavaScript Fundamentals</h3>
+                    </div>
+                </div>
+                <p class="course-description">
+                    Master the basics of JavaScript programming including variables, functions, objects, and DOM manipulation.
+                </p>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>8h</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.8</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>2.1k</span>
+                    </div>
+                </div>
+                <div class="course-tags">
+                    <span class="tag">javascript</span>
+                    <span class="tag">programming</span>
+                    <span class="tag">web development</span>
+                </div>
+                <button class="start-learning-btn">
+                    <i class="fas fa-play"></i>
+                    Start Learning
+                </button>
+            </div>
+
+            <div class="course-card" data-category="languages" data-level="beginner" onclick="startCourse('Languages/python')">
+                <div class="course-header-card">
+                    <div class="course-icon">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="difficulty-badge difficulty-beginner">Beginner</span>
+                        <h3 class="course-title-card">Python Programming</h3>
+                    </div>
+                </div>
+                <p class="course-description">
+                    Learn Python from scratch with hands-on projects in data science, web development, and automation.
+                </p>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>10h</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.9</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>3.5k</span>
+                    </div>
+                </div>
+                <div class="course-tags">
+                    <span class="tag">python</span>
+                    <span class="tag">programming</span>
+                    <span class="tag">data science</span>
+                </div>
+                <button class="start-learning-btn">
+                    <i class="fas fa-play"></i>
+                    Start Learning
+                </button>
+            </div>
+
+            <div class="course-card" data-category="languages" data-level="intermediate" onclick="startCourse('Languages/php')">
+                <div class="course-header-card">
+                    <div class="course-icon">
+                        <i class="fa-brands fa-php"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="difficulty-badge difficulty-intermediate">Intermediate</span>
+                        <h3 class="course-title-card">PHP Backend Development</h3>
+                    </div>
+                </div>
+                <p class="course-description">
+                    Build dynamic web applications and APIs with PHP and modern frameworks.
+                </p>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>12h</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.7</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>1.8k</span>
+                    </div>
+                </div>
+                <div class="course-tags">
+                    <span class="tag">php</span>
+                    <span class="tag">backend</span>
+                    <span class="tag">web development</span>
+                </div>
+                <button class="start-learning-btn">
+                    <i class="fas fa-play"></i>
+                    Start Learning
+                </button>
+            </div>
+
+            <div class="course-card" data-category="languages" data-level="advanced" onclick="startCourse('Languages/rust')">
+                <div class="course-header-card">
+                    <div class="course-icon">
+                        <i class="fa-brands fa-rust"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="difficulty-badge difficulty-advanced">Advanced</span>
+                        <h3 class="course-title-card">Rust Systems Programming</h3>
+                    </div>
+                </div>
+                <p class="course-description">
+                    Master systems programming with Rust's memory safety and performance guarantees.
+                </p>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>20h</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.9</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>1.2k</span>
+                    </div>
+                </div>
+                <div class="course-tags">
+                    <span class="tag">rust</span>
+                    <span class="tag">systems programming</span>
+                    <span class="tag">performance</span>
+                </div>
+                <button class="start-learning-btn">
+                    <i class="fas fa-play"></i>
+                    Start Learning
+                </button>
+            </div>
+
+            <div class="course-card" data-category="languages" data-level="intermediate" onclick="startCourse('Languages/solidity')">
+                <div class="course-header-card">
+                    <div class="course-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="difficulty-badge difficulty-intermediate">Intermediate</span>
+                        <h3 class="course-title-card">Solidity Smart Contracts</h3>
+                    </div>
+                </div>
+                <p class="course-description">
+                    Build decentralized applications and smart contracts on the Ethereum blockchain.
+                </p>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>16h</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.8</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>1.5k</span>
+                    </div>
+                </div>
+                <div class="course-tags">
+                    <span class="tag">solidity</span>
+                    <span class="tag">blockchain</span>
+                    <span class="tag">ethereum</span>
+                </div>
+                <button class="start-learning-btn">
+                    <i class="fas fa-play"></i>
+                    Start Learning
+                </button>
+            </div>
+
+            <div class="course-card" data-category="languages" data-level="beginner" onclick="startCourse('Languages/sql')">
+                <div class="course-header-card">
+                    <div class="course-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="difficulty-badge difficulty-beginner">Beginner</span>
+                        <h3 class="course-title-card">SQL Database Mastery</h3>
+                    </div>
+                </div>
+                <p class="course-description">
+                    Learn to query and manage databases with SQL, from basic queries to advanced optimization.
+                </p>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>9h</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.7</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>2.4k</span>
+                    </div>
+                </div>
+                <div class="course-tags">
+                    <span class="tag">sql</span>
+                    <span class="tag">database</span>
+                    <span class="tag">data management</span>
+                </div>
+                <button class="start-learning-btn">
+                    <i class="fas fa-play"></i>
+                    Start Learning
+                </button>
+            </div>
+
+            <!-- Frameworks -->
+            <div class="course-card" data-category="frameworks" data-level="intermediate" onclick="startCourse('frameworks/react')">
+                <div class="course-header-card">
+                    <div class="course-icon">
+                        <i class="fa-brands fa-react"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="difficulty-badge difficulty-intermediate">Intermediate</span>
+                        <h3 class="course-title-card">React.js Development</h3>
+                    </div>
+                </div>
+                <p class="course-description">
+                    Build modern web applications with React.js, hooks, and component-based architecture.
+                </p>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>14h</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.9</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>3.1k</span>
+                    </div>
+                </div>
+                <div class="course-tags">
+                    <span class="tag">react</span>
+                    <span class="tag">frontend</span>
+                    <span class="tag">components</span>
+                </div>
+                <button class="start-learning-btn blue">
+                    <i class="fas fa-play"></i>
+                    Start Learning
+                </button>
+            </div>
+
+            <div class="course-card" data-category="frameworks" data-level="intermediate" onclick="startCourse('frameworks/node')">
+                <div class="course-header-card">
+                    <div class="course-icon">
+                        <i class="fa-brands fa-node-js"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="difficulty-badge difficulty-intermediate">Intermediate</span>
+                        <h3 class="course-title-card">Node.js Backend</h3>
+                    </div>
+                </div>
+                <p class="course-description">
+                    Create scalable server-side applications with Node.js and Express framework.
+                </p>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>16h</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.8</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>2.7k</span>
+                    </div>
+                </div>
+                <div class="course-tags">
+                    <span class="tag">nodejs</span>
+                    <span class="tag">backend</span>
+                    <span class="tag">express</span>
+                </div>
+                <button class="start-learning-btn blue">
+                    <i class="fas fa-play"></i>
+                    Start Learning
+                </button>
+            </div>
+
+            <div class="course-card" data-category="frameworks" data-level="intermediate" onclick="startCourse('frameworks/django')">
+                <div class="course-header-card">
+                    <div class="course-icon">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="difficulty-badge difficulty-intermediate">Intermediate</span>
+                        <h3 class="course-title-card">Django Web Framework</h3>
+                    </div>
+                </div>
+                <p class="course-description">
+                    Build full-stack web applications with Django's powerful features and best practices.
+                </p>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>18h</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.7</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>2.2k</span>
+                    </div>
+                </div>
+                <div class="course-tags">
+                    <span class="tag">django</span>
+                    <span class="tag">python</span>
+                    <span class="tag">full-stack</span>
+                </div>
+                <button class="start-learning-btn">
+                    <i class="fas fa-play"></i>
+                    Start Learning
+                </button>
+            </div>
+
+            <div class="course-card" data-category="frameworks" data-level="beginner" onclick="startCourse('frameworks/bootstrap')">
+                <div class="course-header-card">
+                    <div class="course-icon">
+                        <i class="fa-brands fa-bootstrap"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="difficulty-badge difficulty-beginner">Beginner</span>
+                        <h3 class="course-title-card">Bootstrap Framework</h3>
+                    </div>
+                </div>
+                <p class="course-description">
+                    Create responsive and beautiful websites quickly with Bootstrap's component library.
+                </p>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>6h</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.6</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>1.7k</span>
+                    </div>
+                </div>
+                <div class="course-tags">
+                    <span class="tag">bootstrap</span>
+                    <span class="tag">css framework</span>
+                    <span class="tag">responsive</span>
+                </div>
+                <button class="start-learning-btn">
+                    <i class="fas fa-play"></i>
+                    Start Learning
+                </button>
+            </div>
+
+            <div class="course-card" data-category="frameworks" data-level="beginner" onclick="startCourse('frameworks/tailwind')">
+                <div class="course-header-card">
+                    <div class="course-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="difficulty-badge difficulty-beginner">Beginner</span>
+                        <h3 class="course-title-card">Tailwind CSS</h3>
+                    </div>
+                </div>
+                <p class="course-description">
+                    Design modern interfaces with utility-first CSS framework for rapid development.
+                </p>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>8h</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.8</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>2.0k</span>
+                    </div>
+                </div>
+                <div class="course-tags">
+                    <span class="tag">tailwind</span>
+                    <span class="tag">css</span>
+                    <span class="tag">utility-first</span>
+                </div>
+                <button class="start-learning-btn">
+                    <i class="fas fa-play"></i>
+                    Start Learning
+                </button>
+            </div>
+
+            <div class="course-card" data-category="frameworks" data-level="advanced" onclick="startCourse('frameworks/native')">
+                <div class="course-header-card">
+                    <div class="course-icon">
+                        <i class="fas fa-mobile-screen"></i>
+                    </div>
+                    <div class="course-info">
+                        <span class="difficulty-badge difficulty-advanced">Advanced</span>
+                        <h3 class="course-title-card">Native Mobile Development</h3>
+                    </div>
+                </div>
+                <p class="course-description">
+                    Build native iOS and Android applications with platform-specific tools and languages.
+                </p>
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>25h</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.9</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-users"></i>
+                        <span>1.1k</span>
+                    </div>
+                </div>
+                <div class="course-tags">
+                    <span class="tag">mobile</span>
+                    <span class="tag">ios</span>
+                    <span class="tag">android</span>
+                    <span class="tag">native</span>
+                </div>
+                <button class="start-learning-btn">
+                    <i class="fas fa-play"></i>
+                    Start Learning
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Load Component System -->
+    <script src="components/component-loader.js"></script>
+    
+    <script>
+        // Course Library Interactive Functions
+        function startCourse(coursePath) {
+            const courseName = getCourseName(coursePath);
+            showNotification('Course Started!', `Welcome to ${courseName}! Let's begin your learning journey.`);
+            
+            // Simulate course loading
+            setTimeout(() => {
+                window.location.href = coursePath + '.html';
+            }, 1500);
+        }
+
+        function getCourseName(coursePath) {
+            const courseNames = {
+                'courses/web-development': 'Web Development',
+                'courses/cybersecurity': 'Cybersecurity',
+                'courses/software-development': 'Software Development',
+                'courses/ui-ux': 'UI/UX Design',
+                'courses/data-analysis': 'Data Analysis',
+                'Languages/javascript': 'JavaScript Fundamentals',
+                'Languages/python': 'Python Programming',
+                'Languages/php': 'PHP Backend Development',
+                'Languages/rust': 'Rust Systems Programming',
+                'Languages/solidity': 'Solidity Smart Contracts',
+                'Languages/sql': 'SQL Database Mastery',
+                'frameworks/react': 'React.js Development',
+                'frameworks/node': 'Node.js Backend',
+                'frameworks/django': 'Django Web Framework',
+                'frameworks/bootstrap': 'Bootstrap Framework',
+                'frameworks/tailwind': 'Tailwind CSS',
+                'frameworks/native': 'Native Mobile Development'
+            };
+            
+            return courseNames[coursePath] || 'Course';
+        }
+
+        function showNotification(title, message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 1rem;
+                right: 1rem;
+                background: var(--card-bg);
+                border: 1px solid var(--accent);
+                border-radius: var(--radius-lg);
+                padding: 1rem 1.5rem;
+                box-shadow: var(--shadow-lg);
+                z-index: 1000;
+                max-width: 300px;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            notification.innerHTML = `
+                <div style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">${title}</div>
+                <div style="font-size: 0.875rem; color: var(--text-secondary);">${message}</div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideIn 0.3s ease reverse';
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+
+        // Enhanced Search functionality
+        document.querySelector('.search-input').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const courseCards = document.querySelectorAll('.course-card');
+            let visibleCount = 0;
+            
+            courseCards.forEach(card => {
+                const title = card.querySelector('.course-title-card').textContent.toLowerCase();
+                const description = card.querySelector('.course-description').textContent.toLowerCase();
+                const tags = Array.from(card.querySelectorAll('.tag')).map(tag => tag.textContent.toLowerCase());
+                
+                const matches = title.includes(searchTerm) || 
+                              description.includes(searchTerm) || 
+                              tags.some(tag => tag.includes(searchTerm));
+                
+                card.style.display = matches ? 'block' : 'none';
+                if (matches) visibleCount++;
+            });
+            
+            // Update course count
+            document.getElementById('courses-count').textContent = visibleCount;
+        });
+
+        // Enhanced Filter functionality
+        document.getElementById('level-filter').addEventListener('change', filterCourses);
+        document.getElementById('category-filter').addEventListener('change', filterCourses);
+
+        function filterCourses() {
+            const levelFilter = document.getElementById('level-filter').value;
+            const categoryFilter = document.getElementById('category-filter').value;
+            const courseCards = document.querySelectorAll('.course-card');
+            let visibleCount = 0;
+            
+            courseCards.forEach(card => {
+                const level = card.dataset.level;
+                const category = card.dataset.category;
+                
+                const levelMatch = !levelFilter || level === levelFilter;
+                const categoryMatch = !categoryFilter || category === categoryFilter;
+                
+                const shouldShow = levelMatch && categoryMatch;
+                card.style.display = shouldShow ? 'block' : 'none';
+                
+                if (shouldShow) visibleCount++;
+            });
+            
+            // Update course count
+            document.getElementById('courses-count').textContent = visibleCount;
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load header component
+            ComponentLoader.load('header', '#header-container');
+            
+            // Stagger animations
+            const animatedElements = document.querySelectorAll('.animate-in');
+            animatedElements.forEach((element, index) => {
+                element.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+
+    <!-- Voice Flow AI Assistant -->
+    <script type="text/javascript">
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+                window.voiceflow.chat.load({
+                    verify: { projectID: '687097057f5efc148cd14893' },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production',
+                    voice: {
+                        url: "https://runtime-api.voiceflow.com"
+                    }
+                });
+            }
+            v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
+            v.type = "text/javascript"; 
+            s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+    </script>
+</body>
+</html>

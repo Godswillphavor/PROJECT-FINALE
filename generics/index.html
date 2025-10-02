@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TechXpert - Your premier destination for tecgith education. Learn web development, cybersecurity, software development, UI/UX, and more.">
+    <meta name="keywords" content="tech education, web development, cybersecurity, software development, UI/UX, programming courses">
+    <title>TechXpert</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="design/styles.css" as="style">
+    <link rel="preload" href="../images/techxpert-terminal.png" as="image">
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../design/styles.css">
+
+
+    <!-- <link rel="stylesheet" href="design/styles.css"> -->
+    <!-- <link rel="stylesheet" href="responsive.css"> -->
+    <link rel="shortcut icon" href="../images/techxpert-terminal.png" type="image/x-icon">
+    <script src="JS/auth.js"></script>
+    <script src="JS/script.js"></script>
+
+
+
+    <!-- Firebase SDKs:-->
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
+
+</head>
+<body>
+    <header class="cyber-header">
+        <nav class="nav-container" role="navigation" aria-label="Main navigation">
+            <div class="logo-container">
+                <img src="../images/techxpert-terminal.png" alt="TechXpert Logo" class="cyber-logo" width="60" height="60">
+                <h1>Tech<b>X</b>pert</h1>
+            </div>
+            <!-- Hamburger Icon for Mobile -->
+            <button class="hamburger" id="hamburger-menu" aria-label="Open menu" aria-controls="mobile-sidebar" aria-expanded="false">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+            <div class="nav-menu nav-links" id="main-menu" role="navigation" aria-label="Main menu">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#journey" class="nav-link">Journey</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <button class="cyber-button nav-cta" onclick="window.location.href='#get-started'">Get Started</button>
+            </div>
+        </nav>
+        <!-- Sidebar for Mobile -->
+        <aside class="mobile-sidebar" id="mobile-sidebar" aria-hidden="true">
+            <div class="sidebar-header">
+                <span class="sidebar-logo"><img src="../images/techxpert-terminal.png" alt="TechXpert Logo" width="40"><h1>Tech<b>X</b>pert</h1></span>
+                <button class="close-sidebar" id="close-sidebar" aria-label="Close menu">&times;</button>
+            </div>
+            <div class="sidebar-links">
+                <a href="#hero" class="sidebar-link">Home</a>
+                <a href="#features" class="sidebar-link">Features</a>
+                <a href="#journey" class="sidebar-link">Journey</a>
+                <a href="#testimonials" class="sidebar-link">Testimonials</a>
+                <a href="#faq" class="sidebar-link">FAQ</a>
+                <div class="sidebar-auth">
+                    <button class="cyber-button sidebar-getstarted" onclick="window.location.href='#get-started'">Get Started</button>
+                    <a href="#get-started" class="sidebar-signin">Sign In</a>
+                </div>
+            </div>
+        </aside>
+        <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="homepage-hero">
+            <div class="hero-badge">Next-Gen Developer Education</div>
+            <h1 class="hero-title">
+                <span class="hero-title-bold">Master</span>
+                <span class="hero-title-gradient">Coding</span>
+                <span class="hero-title-bold">with</span>
+                <span class="hero-title-gradient">TECHXPERT</span>
+            </h1>
+            <p class="hero-subtitle">Learn HTML, CSS, and JavaScript through interactive courses, practice in our built-in IDE, and become a web development expert with hands-on experience.</p>
+            <div class="hero-cta-group">
+                <button class="cyber-button"  onclick="window.location.href='#get-started'">Start Learning Free</button>
+                <button class="cyber-button secondary" onclick="window.location.href='#demo'">Watch Demo</button>
+            </div>
+            <div class="hero-benefits">
+                <span><i class="fas fa-check-circle" style="color: #21d021;"></i> 100% Free</span>
+                <span><i class="fas fa-credit-card" style="color: #21d021;"></i> No Credit Card</span>
+                <span><i class="fas fa-bolt" style="color: #21d021;"></i> Instant Access</span>
+            </div>
+        </section>
+
+        <!-- CORE FEATURES SECTION -->
+        <section id="core-features" class="core-features-section">
+            <!-- <h2 class="core-features-title">Core Features</h2> -->
+            <div class="core-features-list">
+                <div class="core-feature-row">
+                    <div class="core-feature-content">
+                        <div class="core-feature-icon"><i class="fas fa-terminal"></i></div>
+                        <h3>Inbuilt IDE</h3>
+                        <p>Write, run, and debug code directly in your browser. Experience real-time feedback and seamless coding without any setup.</p>
+                    </div>
+                    <div class="core-feature-image">
+                        <img src="../images/techxpert-terminal.png" alt="Inbuilt IDE Screenshot" />
+                    </div>
+                </div>
+                <div class="core-feature-row">
+                    <div class="core-feature-content">
+                        <div class="core-feature-icon"><i class="fas fa-robot"></i></div>
+                        <h3>AI Assistant</h3>
+                        <p>Get instant coding help, explanations, and project guidance from our integrated AI assistant—always available as you learn.</p>
+                    </div>
+                    <div class="core-feature-image">
+                        <img src="../images/about-img.svg" alt="AI Assistant Illustration" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES SECTION -->
+        <section id="features" class="features-section">
+            <h2 class="features-title">Everything you need to become a <span class="hero-title-gradient">web developer</span></h2>
+            <p class="features-subtitle">From beginner to expert, our platform provides all the tools and resources you need</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-book"></i></div>
+                    <h3>Structured Courses</h3>
+                    <ul>
+                        <li>Progressive learning path</li>
+                        <li>Hands-on projects</li>
+                        <li>Real-world examples</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-desktop"></i></div>
+                    <h3>Built-in IDE</h3>
+                    <ul>
+                        <li>Live code preview</li>
+                        <li>Syntax highlighting</li>
+                        <li>Auto-completion</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Interactive Learning</h3>
+                    <ul>
+                        <li>Instant feedback</li>
+                        <li>Progress tracking</li>
+                        <li>Achievement system</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEARNING JOURNEY SECTION -->
+        <section id="journey" class="learning-journey-section">
+            <h2 class="learning-journey-title">Your Learning Journey</h2>
+            <p class="learning-journey-subtitle">Follow our structured path from beginner to professional web developer</p>
+            <ol class="learning-journey-list">
+                <li>
+                    <span class="journey-step-circle">1</span>
+                    <div class="journey-step-content">
+                        <strong>HTML Fundamentals</strong>
+                        <span>Learn the building blocks of web development with HTML structure, elements, and semantic markup.</span>
+                        <div class="journey-tags">
+                            <span>Elements</span><span>Attributes</span><span>Forms</span><span>Semantic HTML</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="journey-step-circle">2</span>
+                    <div class="journey-step-content">
+                        <strong>CSS Styling</strong>
+                        <span>Master the art of styling with CSS, from basic properties to advanced layouts and animations.</span>
+                        <div class="journey-tags">
+                            <span>Flexbox</span><span>Grid</span><span>Animations</span><span>Responsive Design</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="journey-step-circle">3</span>
+                    <div class="journey-step-content">
+                        <strong>JavaScript Programming</strong>
+                        <span>Bring your websites to life with JavaScript, from basic scripting to advanced programming concepts.</span>
+                        <div class="journey-tags">
+                            <span>DOM Manipulation</span><span>Event Handling</span><span>APIs</span><span>Modern ES6+</span>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section id="testimonials" class="testimonials-section">
+            <h2 class="testimonials-title">What Our Learners Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <img src="../images/pic-1.jpg" alt="Student 1">
+                    <blockquote>“TechXpert made learning web development fun and easy. The interactive IDE is a game changer!”</blockquote>
+                    <div class="testimonial-name">Godswill Favour</div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="../images/pic-2.jpg" alt="Student 2">
+                    <blockquote>“I landed my first job thanks to the hands-on projects and real-world examples.”</blockquote>
+                    <div class="testimonial-name">Jane Doe</div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="../images/pic-3.jpg" alt="Student 3">
+                    <blockquote>“The learning journey is so well structured. I always knew what to do next!”</blockquote>
+                    <div class="testimonial-name">Alex Smith</div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- SIGN IN / SIGN UP SECTION -->
+        <section id="get-started" class="auth-section">
+            <div class="container" id="auth-container">
+                <div class="form-container sign-in-container">
+                    <form id="Login-Form" autocomplete="on">
+                        <h2 class="form-title" style="font-weight:700; margin-bottom:1.2em;">Sign in</h2>
+                        <div class="social-container center-social" aria-label="Sign in with social account">
+                            <svg class="svg-icon svg-github" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 013.003-.404c1.018.005 2.045.138 3.003.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.119 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222v3.293c0 .322.218.694.825.576C20.565 21.796 24 17.299 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                            <svg class="svg-icon svg-twitter" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                            <svg class="svg-icon svg-google" id="google-signin-btn"  viewBox="0 0 24 24">
+                                <path d="M21.805 10.023h-9.765v3.977h5.617c-.242 1.242-1.469 3.648-5.617 3.648-3.375 0-6.125-2.789-6.125-6.188s2.75-6.188 6.125-6.188c1.922 0 3.211.82 3.953 1.523l2.703-2.633c-1.727-1.617-3.953-2.617-6.656-2.617-5.523 0-10 4.477-10 10s4.477 10 10 10c5.781 0 9.594-4.055 9.594-9.773 0-.656-.07-1.156-.156-1.648z"/>
+                            </svg>
+                        </div>
+                        <span class="or-text">or use your email account:</span>
+                        <label for="login-email" class="sr-only">Email</label>
+                        
+                        <input id="login-email" type="email" placeholder="Email" required autocomplete="username">
+                        <label for="login-password" class="sr-only">Password</label>
+                        <input id="login-password" type="password" placeholder="Password" required autocomplete="current-password">
+                        <a href="#" id="forgot-password-link" class="forgot-password-link">Forgot your password?</a>
+                        <button type="submit" class="auth-btn">Sign In</button>
+                    </form>
+                </div>
+                <div class="form-container sign-up-container">
+                    <form id="Register-Form" autocomplete="on">
+                        <h2 class="form-title" style="font-weight:700; margin-bottom:1.2em;">Create Account</h2>
+                        <div class="social-container center-social" aria-label="Sign up with social account">
+                            <svg class="svg-icon svg-github" viewBox="0 0 24 24">
+                                <path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 013.003-.404c1.018.005 2.045.138 3.003.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.119 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222v3.293c0 .322.218.694.825.576C20.565 21.796 24 17.299 24 12c0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            
+                            <svg class="svg-icon svg-twitter" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                            
+                            <svg class="svg-icon svg-google" viewBox="0 0 24 24">
+                                <path d="M21.805 10.023h-9.765v3.977h5.617c-.242 1.242-1.469 3.648-5.617 3.648-3.375 0-6.125-2.789-6.125-6.188s2.75-6.188 6.125-6.188c1.922 0 3.211.82 3.953 1.523l2.703-2.633c-1.727-1.617-3.953-2.617-6.656-2.617-5.523 0-10 4.477-10 10s4.477 10 10 10c5.781 0 9.594-4.055 9.594-9.773 0-.656-.07-1.156-.156-1.648z"/>
+                            </svg>
+                        </div>
+                        <span class="or-text">or use your email for registration:</span>
+                        <input type="text" placeholder="Name" required autocomplete="name">
+                        <input type="email" placeholder="Email" required autocomplete="email">
+                          <input type="password" placeholder="Password" required autocomplete="new-password"> 
+           
+                        <button type="submit" class="auth-btn">Sign Up</button>
+                    </form>
+                </div>
+                <div class="overlay-container">
+
+                    <div class="overlay">
+                        
+                        <div class="overlay-panel overlay-left">
+                            <div class="log-head">
+                                <img src="../images/techxpert-terminal.png" alt="TechXpert Logo" style="width:40px;">
+                                <h2>TECH<b>X</b>PERT</h2>
+                            </div>
+                            <h2>Welcome Back!</h2>
+                            <p>To stay connected with us please login with your personal info</p>
+                            <button class="ghost auth-btn" id="signIn">Sign In</button>
+                        </div>
+                        <div class="overlay-panel overlay-right">
+                            <div class="log-head">
+                                <img src="../images/techxpert-terminal.png" alt="TechXpert Logo" style="width:40px;">
+                                <h2>TECH<b>X</b>PERT</h2>
+                            </div>
+                            <h2>Hello, Friend!</h2>
+                            <p>Join Us at TECHXPERT for an amazing learning experience</p>
+                            <button class="ghost auth-btn" id="signUp">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+            .auth-section {
+                background: #181818;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 60px 0;
+            }
+            .container {
+                background: #23242b;
+                border-radius: 16px;
+                box-shadow: 0 14px 28px rgba(0,0,0,0.18), 0 3px 6px rgba(0,0,0,0.12);
+                position: relative;
+                overflow: hidden;
+                width: 820px;
+                max-width: 100vw;
+                min-height: 520px;
+                display: flex;
+            }
+            .form-container {
+                position: absolute;
+                top: 0;
+                height: 100%;
+                transition: all 0.6s ease-in-out;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                width: 50%;
+                padding: 0 50px;
+                background:#fff;
+            }
+            .sign-in-container {
+                left: 0;
+                z-index: 2;
+            }
+            .sign-up-container {
+                left: 0;
+                opacity: 0;
+                z-index: 1;
+            }
+            .container.right-panel-active .sign-in-container {
+                transform: translateX(100%);
+                opacity: 0;
+                z-index: 1;
+            }
+            .container.right-panel-active .sign-up-container {
+                transform: translateX(100%);
+                opacity: 1;
+                z-index: 2;
+            }
+
+            .log-head{
+                display: flex;
+                margin: 20px;
+            }
+            .overlay-container {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 50%;
+                height: 100%;
+                overflow: hidden;
+                transition: transform 0.6s ease-in-out;
+                z-index: 100;
+            }
+            .overlay {
+                background: linear-gradient(120deg, #23242b 0%, #181a20 100%);
+                background-repeat: no-repeat;
+                background-size: cover;
+                color: #fff;
+                position: relative;
+                left: -100%;
+                height: 100%;
+                width: 200%;
+                transform: translateX(0);
+                transition: transform 0.6s ease-in-out;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .container.right-panel-active .overlay-container {
+                transform: translateX(-100%);
+            }
+            .container.right-panel-active .overlay {
+                transform: translateX(50%);
+            }
+            .overlay-panel {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                top: 0;
+                height: 100%;
+                width: 50%;
+                transform: translateX(0);
+                transition: transform 0.6s ease-in-out;
+                padding: 0 40px;
+            }
+            .overlay-left {
+                transform: translateX(-20%);
+                left: 0;
+            }
+            .overlay-right {
+                right: 0;
+                transform: translateX(0);
+            }
+            .container.right-panel-active .overlay-left {
+                transform: translateX(0);
+            }
+            .container.right-panel-active .overlay-right {
+                transform: translateX(20%);
+            }
+            .form-title {
+                font-weight: 700;
+                margin-bottom: 0.5em;
+                color: #000;
+                font-size: 2rem;
+                letter-spacing: -1px;
+            }
+           
+             .social-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin: 15px ;
+        }
+            
+        .svg-icon {
+            width: 30px;
+            height: 30px;
+            /* fill: #333; */
+            transition: fill 0.3s ease;
+        }
+        
+        .svg-icon:hover {
+            cursor: pointer;
+        }
+        
+
+        .svg-github:hover { fill: #000000; }
+        .svg-twitter:hover { fill: #1da1f2; }
+        .svg-google:hover { fill: linear-gradient(to bottom, #ed2222, #f1f11e, #14db3f #2b4de6);}
+          
+        
+        .social {
+                border: 1.5px solid #444;
+                border-radius: 50%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+                color: #fff;
+                background: #23242b;
+                transition: box-shadow 0.2s, color 0.2s, background 0.2s;
+            }
+            .social:hover {
+                box-shadow: 0 2px 8px rgba(255,255,255,0.10);
+                color: #23242b;
+                background: #fff;
+            }
+            .or-text {
+                color: #bbb;
+                font-size: 0.95em;
+                margin-bottom: 10px;
+                display: block;
+            }
+            input[type="text"], input[type="email"], input[type="password"] {
+                background: #fff;
+                border: none;
+                border-bottom: 2px solid #bdc3c7;
+                padding: 12px 16px;
+                margin: 8px 0;
+                width: 100%;
+                border-radius: 0;
+                font-size: 1em;
+                color: #000;
+                box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+                transition: all 0.3s ease;
+            }
+            input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+                border-bottom-color: #000;
+                outline: none;
+            }
+            .auth-btn {
+                border-radius: 20px;
+                border: none;
+                background: #000;
+                color: #fff;
+                font-size: 1.1em;
+                font-weight: 600;
+                padding: 12px 40px;
+                margin-top: 10px;
+                margin-bottom: 8px;
+                letter-spacing: 1px;
+                transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+                cursor: pointer;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            }
+            .auth-btn:hover, .auth-btn:focus {
+                background: #222;
+                color: #fff;
+            }
+            .auth-btn.ghost {
+                background: transparent;
+                border: 2px solid #fff;
+                color: #fff;
+                box-shadow: none;
+            }
+            .auth-btn.ghost:hover, .auth-btn.ghost:focus {
+                background: #fff;
+                color: #181a20;
+            }
+            .forgot-link {
+
+                color: #222;
+                font-size: 0.95em;
+                margin-bottom: 8px;
+                display: block;
+                text-align: left;
+                text-decoration: underline;
+                transition: color 0.2s;
+            }
+            .forgot-link:hover {
+                color: #000;
+            }
+          a {
+            text-decoration: none;
+          }
+            @media (max-width: 900px) {
+                .container {
+                    width: 98vw;
+                    min-width: 0;
+                }
+            }
+            @media (max-width: 600px) {
+                .container {
+                    flex-direction: column;
+                    min-height: 0;
+                    height: auto;
+                }
+                .form-container, .overlay-container, .overlay-panel {
+                    width: 100% !important;
+                    left: 0 !important;
+                    padding: 0 10vw !important;
+                }
+                .overlay {
+                    left: 0 !important;
+                    width: 100% !important;
+                }
+            }
+            .form-title {
+                text-align: center;
+                width: 100%;
+                display: block;
+            }
+            .center-social {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                width: 100%;
+                margin: 0 auto 1.2em auto !important;
+                gap: 15px;
+            }
+            </style>
+        </section>
+
+
+        <!-- FAQ SECTION -->
+        <section id="faq" class="faq-section">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">Is TechXpert really free?</button>
+                    <div class="faq-answer">Yes! All our core courses and IDE are 100% free to use.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do I need to install anything?</button>
+                    <div class="faq-answer">No installation needed. Everything runs in your browser.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I get a certificate?</button>
+                    <div class="faq-answer">Yes, you can earn certificates for completing courses and projects.</div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Fix for embedded auth section layout -->
+        <style>
+        /* Prevent imported auth CSS from breaking landing page layout */
+        body {
+            display: block !important;
+            justify-content: unset !important;
+            align-items: unset !important;
+            min-height: unset !important;
+        }
+        /* All previous custom auth-section styles removed for split-panel redesign */
+        </style>  
+
+        <!-- FOOTER SECTION -->
+        <footer class="footer-section">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../images/techxpert-terminal.png" alt="TechXpert Logo" width="40">
+                    <span>TechXpert</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#hero">Home</a>
+                    <a href="#features">Features</a>
+                    <a href="#journey">Journey</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+                <div class="footer-copy">&copy; 2024 TechXpert. All rights reserved.</div>
+            </div>
+        </footer>
+    </main>
+
+
+    <script>
+
+
+
+
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            answer.classList.toggle('open');
+            this.classList.toggle('active');
+        });
+    });
+
+    // Split-panel sign-in/sign-up JS
+    const authContainer = document.getElementById('auth-container');
+    const signUpBtn = document.getElementById('signUp');
+    const signInBtn = document.getElementById('signIn');
+    if (signUpBtn && signInBtn && authContainer) {
+        signUpBtn.addEventListener('click', () => {
+            authContainer.classList.add('right-panel-active');
+        });
+        signInBtn.addEventListener('click', () => {
+            authContainer.classList.remove('right-panel-active');
+        });
+    }
+    // Responsive Navbar Sidebar JS
+    const hamburger = document.getElementById('hamburger-menu');
+    const sidebar = document.getElementById('mobile-sidebar');
+    const closeSidebar = document.getElementById('close-sidebar');
+    const sidebarBackdrop = document.getElementById('sidebar-backdrop');
+    function openSidebar() {
+        sidebar.classList.add('open');
+        sidebarBackdrop.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        sidebar.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeSidebarFn() {
+        sidebar.classList.remove('open');
+        sidebarBackdrop.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        sidebar.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+    if (hamburger && sidebar && closeSidebar && sidebarBackdrop) {
+        hamburger.addEventListener('click', openSidebar);
+        closeSidebar.addEventListener('click', closeSidebarFn);
+        sidebarBackdrop.addEventListener('click', closeSidebarFn);
+        // Close sidebar on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+                closeSidebarFn();
+            }
+        });
+        // Close sidebar when a link is clicked
+        sidebar.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeSidebarFn);
+        });
+    }
+    </script>
+</body>
+
+</html>

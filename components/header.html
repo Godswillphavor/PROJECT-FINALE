@@ -1,0 +1,146 @@
+<!-- Shared Header Component -->
+<header class="cyber-header">
+    <nav class="nav-container">
+        <div class="logo-container">
+            <img src="images/techxpert-terminal.png" alt="TechXpert Logo" class="cyber-logo" width="60" height="60">
+            <h1>Tech<b>X</b>pert</h1>
+        </div>
+        
+        <!-- Hamburger Icon for Mobile -->
+        <button class="hamburger" id="hamburger-menu" aria-label="Open menu" aria-controls="mobile-sidebar" aria-expanded="false">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        
+        <div class="cyber-search">
+            <input type="text" class="search-input" placeholder="Search Courses...">
+            <i class="fas fa-search"></i>
+        </div>
+        
+        <nav class="nav-menu nav-links" id="main-menu" role="navigation" aria-label="Main menu">
+            <a href="home.html" class="nav-link">Home</a>
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+            
+            <div class="dropdown">
+                <a href="#" class="nav-link dropdown-trigger">Courses</a>
+                <div class="dropdown-content">
+                    <div class="crse-wrapper">
+                        <div class="crse-col">
+                            <div id="side-icon">
+                                <span class="crse-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                                <div class="crse-title">COURSES</div>
+                            </div>
+                            <ul class="crse-list">
+                                <li><a href="courses/web-development.html"><span class="crse-icon"><i class="fa-solid fa-code"></i></span><div class="crse-content"><div class="crse-main">WEB DEVELOPMENT</div></div></a></li>
+                                <li><a href="courses/cybersecurity.html"><span class="crse-icon"><i class="fa-solid fa-shield-halved"></i></span><div class="crse-content"><div class="crse-main">CYBERSECURITY</div></div></a></li>
+                                <li><a href="courses/software-development.html"><span class="crse-icon"><i class="fa-solid fa-laptop-code"></i></span><div class="crse-content"><div class="crse-main">SOFTWARE DEVELOPMENT</div></div></a></li>
+                                <li><a href="courses/ui-ux.html"><span class="crse-icon"><i class="fa-solid fa-palette"></i></span><div class="crse-content"><div class="crse-main">UI/UX</div></div></a></li>
+                                <li><a href="courses/data-analysis.html"><span class="crse-icon"><i class="fa-solid fa-chart-simple"></i></span><div class="crse-content"><div class="crse-main">Data Analysis</div></div></a></li>
+                            </ul>
+                        </div>
+                        <div class="crse-col">
+                            <div id="side-icon">
+                                <span class="crse-icon"><i class="fa-solid fa-code"></i></span>
+                                <div class="crse-title">PROGRAMMING LANGUAGES</div>
+                            </div>
+                            <ul class="crse-list">
+                                <li><a href="Languages/javascript.html"><span class="crse-icon"><i class="fa-brands fa-js"></i></span><div class="crse-content"><div class="crse-main">JAVASCRIPT</div></div></a></li>
+                                <li><a href="Languages/rust.html"><span class="crse-icon"><i class="fa-brands fa-rust"></i></span><div class="crse-content"><div class="crse-main">RUST</div></div></a></li>
+                                <li><a href="Languages/solidity.html"><span class="crse-icon"><i class="fa-solid fa-cube"></i></span><div class="crse-content"><div class="crse-main">SOLIDITY</div></div></a></li>
+                                <li><a href="Languages/sql.html"><span class="crse-icon"><i class="fa-solid fa-database"></i></span><div class="crse-content"><div class="crse-main">SQL</div></div></a></li>
+                                <li><a href="Languages/php.html"><span class="crse-icon"><i class="fa-brands fa-php"></i></span><div class="crse-content"><div class="crse-main">PHP</div></div></a></li>
+                                <li><a href="Languages/python.html"><span class="crse-icon"><i class="fa-brands fa-python"></i></span><div class="crse-content"><div class="crse-main">PYTHON</div></div></a></li>
+                            </ul>
+                        </div>
+                        <div class="crse-col">
+                            <div id="side-icon">
+                                <span class="crse-icon"><i class="fa-solid fa-layer-group"></i></span>
+                                <div class="crse-title">FRAMEWORKS</div>
+                            </div>
+                            <ul class="crse-list">
+                                <li><a href="frameworks/bootstrap.html"><span class="crse-icon"><i class="fa-brands fa-bootstrap"></i></span><div class="crse-content"><div class="crse-main">BOOTSTRAP</div></div></a></li>
+                                <li><a href="frameworks/tailwind.html"><span class="crse-icon"><i class="fa-solid fa-wind"></i></span><div class="crse-content"><div class="crse-main">TAILWIND</div></div></a></li>
+                                <li><a href="frameworks/django.html"><span class="crse-icon"><i class="fa-brands fa-python"></i></span><div class="crse-content"><div class="crse-main">DJANGO</div></div></a></li>
+                                <li><a href="frameworks/react.html"><span class="crse-icon"><i class="fa-brands fa-react"></i></span><div class="crse-content"><div class="crse-main">REACT JS</div></div></a></li>
+                                <li><a href="frameworks/node.html"><span class="crse-icon"><i class="fa-brands fa-node-js"></i></span><div class="crse-content"><div class="crse-main">NODE JS</div></div></a></li>
+                                <li><a href="frameworks/native.html"><span class="crse-icon"><i class="fa-solid fa-mobile-screen"></i></span><div class="crse-content"><div class="crse-main">NATIVE</div></div></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="explore-courses-btn" onclick="window.location.href='course-detail.html'">
+                        EXPLORE COURSES
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#" class="nav-link">
+                <div class="profile-dropdown">
+                    <div id="nav-pfp">
+                        <img src="images/pic-1.jpg" class="logo" alt="Profile Picture">
+                    </div>
+                    <div class="profile-dropdown-content">
+                        <div class="profile-header">
+                            <img src="images/pic-1.jpg" alt="Profile Picture">
+                            <div class="profile-info">
+                                <h3 id="username">User</h3>
+                                <p>Student</p>
+                            </div>
+                        </div>
+                        <ul class="profile-menu">
+                            <li><a href="#"><i class="fas fa-user"></i> My Profile</a></li>
+                            <li><a href="dashboard.html"><i class="fas fa-dashboard"></i> Dashboard</a></li>
+                            <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                            <li><a href="#"><i class="fas fa-book"></i> My Courses</a></li>
+                            <li><a href="#"><i class="fas fa-certificate"></i> Certificates</a></li>
+                            <li class="logout"><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+        </nav>
+    </nav>
+</header>
+
+<!-- Mobile Sidebar -->
+<div id="mobile-sidebar" class="mobile-sidebar" aria-hidden="true">
+    <div class="sidebar-header">
+        <h3>Menu</h3>
+        <button id="close-sidebar" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <div class="sidebar-content">
+        <a href="home.html" class="sidebar-link">Home</a>
+        <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+        <a href="course-detail.html" class="sidebar-link">Courses</a>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-section">
+            <h4>Course Categories</h4>
+            <a href="courses/web-development.html" class="sidebar-link">Web Development</a>
+            <a href="courses/cybersecurity.html" class="sidebar-link">Cybersecurity</a>
+            <a href="courses/software-development.html" class="sidebar-link">Software Development</a>
+            <a href="courses/ui-ux.html" class="sidebar-link">UI/UX Design</a>
+            <a href="courses/data-analysis.html" class="sidebar-link">Data Analysis</a>
+        </div>
+        <div class="sidebar-section">
+            <h4>Programming Languages</h4>
+            <a href="Languages/javascript.html" class="sidebar-link">JavaScript</a>
+            <a href="Languages/python.html" class="sidebar-link">Python</a>
+            <a href="Languages/php.html" class="sidebar-link">PHP</a>
+            <a href="Languages/rust.html" class="sidebar-link">Rust</a>
+            <a href="Languages/solidity.html" class="sidebar-link">Solidity</a>
+            <a href="Languages/sql.html" class="sidebar-link">SQL</a>
+        </div>
+        <div class="sidebar-section">
+            <h4>Frameworks</h4>
+            <a href="frameworks/react.html" class="sidebar-link">React</a>
+            <a href="frameworks/node.html" class="sidebar-link">Node.js</a>
+            <a href="frameworks/django.html" class="sidebar-link">Django</a>
+            <a href="frameworks/bootstrap.html" class="sidebar-link">Bootstrap</a>
+            <a href="frameworks/tailwind.html" class="sidebar-link">Tailwind</a>
+            <a href="frameworks/native.html" class="sidebar-link">Native</a>
+        </div>
+    </div>
+</div>
+
+<!-- Sidebar Backdrop -->
+<div id="sidebar-backdrop" class="sidebar-backdrop"></div>

@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Development Course</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./design/styles.css">
+  <link rel="stylesheet" href="./design/responsive.css">
+  <style>
+    /* Custom colors based on attached image dark theme */
+    :root {
+      --bg-color: #121212;
+      --card-bg: #1e1e1e;
+      --card-bg-hover: #2a2a2a;
+      --text-color: #eee;
+      --text-muted: #999;
+      --accent-yellow: #f5c518;
+      --border-color: #333;
+      --button-bg-white: #fff;
+      --button-text-dark: #121212;
+      --button-border-white: #fff;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Scrollbar Styling for navigation */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-color);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: var(--border-color);
+      border-radius: 20px;
+      border: 2px solid var(--bg-color);
+    }
+
+    /* Custom scrollbar for Firefox */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--border-color) var(--bg-color);
+    }
+
+    /* Layout containers */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    /* Header section */
+    header.course-header {
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    header.course-header .left {
+      flex-grow: 1;
+      min-width: 280px;
+    }
+
+    header.course-header h1 {
+      font-weight: 700;
+      font-size: 2.25rem;
+      margin-bottom: 0.25rem;
+    }
+
+    header.course-header .meta {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    header.course-header .meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    header.course-header .meta span svg {
+      fill: var(--text-muted);
+      width: 1rem;
+      height: 1rem;
+    }
+
+    /* Rating stars */
+    header.course-header .rating {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      color: var(--accent-yellow);
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+
+    header.course-header .rating svg {
+      width: 1rem;
+      height: 1rem;
+      fill: var(--accent-yellow);
+    }
+
+    header.course-header .buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    header.course-header .btn-white {
+      background-color: var(--button-bg-white);
+      color: var(--button-text-dark);
+      padding: 0.5rem 1.5rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.25s ease;
+    }
+
+    header.course-header .btn-white:hover {
+      background-color: #f0f0f0;
+    }
+
+    header.course-header .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--button-border-white);
+      color: var(--button-border-white);
+      padding: 0.5rem 1.5rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    header.course-header .btn-outline:hover {
+      background-color: var(--button-border-white);
+      color: var(--button-text-dark);
+    }
+
+    /* Course overview container */
+    section.course-overview {
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    section.course-overview h2 {
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    section.course-overview > p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Cards container */
+    .card-container {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .course-card {
+      background-color: var(--card-bg);
+      border-radius: 0.5rem;
+      flex-grow: 1;
+      min-width: 220px;
+      padding: 1.25rem 1.5rem;
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      user-select: none;
+      box-shadow: 0 0 10px rgb(255 255 255 / 0.04);
+      transition: background-color 0.3s ease;
+    }
+
+    .course-card svg {
+      height: 2.25rem;
+      width: 2.25rem;
+      fill: var(--text-muted);
+      margin-bottom: 0.25rem;
+      user-select: none;
+    }
+
+    .course-card h3 {
+      font-weight: 600;
+      font-size: 1.125rem;
+      user-select: text;
+      margin-bottom: 0;
+    }
+
+    .course-card span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      user-select: text;
+    }
+
+    /* Main content layout */
+    .main-content {
+      display: flex;
+      gap: 2rem;
+      min-height: 600px;
+    }
+
+    /* Navigation for Curriculum - left side */
+    nav.curriculum-nav {
+      width: 320px;
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      background-color: var(--card-bg);
+      overflow-y: auto;
+      flex-shrink: 0;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      user-select: none;
+    }
+
+    nav.curriculum-nav h3 {
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-color);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.5rem;
+      user-select: text;
+    }
+
+    nav.curriculum-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav.curriculum-nav li.module {
+      border-top: 1px solid var(--border-color);
+      padding: 0.75rem 1.5rem 0.25rem 1.5rem;
+      cursor: default;
+      user-select: text;
+      color: var(--text-color);
+    }
+
+    nav.curriculum-nav li.module:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    nav.curriculum-nav li.module strong {
+      user-select: text;
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    nav.curriculum-nav li.module .duration {
+      float: right;
+      color: var(--text-muted);
+      font-weight: 400;
+      font-size: 0.8rem;
+      user-select: text;
+      padding-left: 1rem;
+    }
+
+    nav.curriculum-nav li.module ul.topics {
+      margin-top: 0.25rem;
+      padding-left: 1.25rem;
+      user-select: none;
+    }
+
+    nav.curriculum-nav li.module ul.topics li.topic {
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--border-color);
+      cursor: pointer;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.2s ease;
+    }
+
+    nav.curriculum-nav li.module ul.topics li.topic:hover,
+    nav.curriculum-nav li.module ul.topics li.topic.active {
+      background-color: var(--card-bg-hover);
+      color: var(--text-color);
+    }
+
+    nav.curriculum-nav li.module ul.topics li.topic .topic-title {
+      flex-grow: 1;
+      user-select: text;
+      font-size: 0.875rem;
+    }
+
+    nav.curriculum-nav li.module ul.topics li.topic .topic-duration {
+      font-size: 0.75rem;
+      user-select: text;
+      flex-shrink: 0;
+      color: var(--accent-yellow);
+      font-weight: 500;
+      min-width: 36px;
+      text-align: right;
+    }
+
+    nav.curriculum-nav li.module ul.topics li.topic .expand-icon {
+      width: 15px;
+      height: 15px;
+      margin-right: 8px;
+      flex-shrink: 0;
+      fill: var(--accent-yellow);
+      user-select: none;
+    }
+
+
+
+    .try-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #eee;
+    text-decoration: none;
+    border-radius: 4px;
+    color: var(--button-text-dark);
+}
+
+
+    /* Content display area to right */
+    article.content-display {
+      flex-grow: 1;
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      background-color: var(--card-bg);
+      padding: 2rem;
+      overflow-y: auto;
+      max-height: 650px;
+      user-select: text;
+    }
+
+    article.content-display h2 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    article.content-display p {
+      line-height: 1.6;
+      font-size: 1rem;
+      margin-bottom: 1.25rem;
+      color: var(--text-muted);
+    }
+
+    article.content-display ul {
+      list-style-type: disc;
+      margin-left: 1.35rem;
+      margin-bottom: 1.5rem;
+    }
+
+    article.content-display ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    article.content-display code {
+      background-color: #2d2d2d;
+      padding: 0.15rem 0.3rem;
+      border-radius: 3px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.9rem;
+      color: #f8f8f2;
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .main-content {
+        flex-direction: column;
+      }
+
+      nav.curriculum-nav {
+        width: 100%;
+        max-height: 250px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        padding-bottom: 0;
+      }
+
+      nav.curriculum-nav li.module {
+        display: inline-block;
+        border: none;
+        padding: 0 1rem 0.25rem 0;
+        vertical-align: top;
+      }
+
+      nav.curriculum-nav li.module ul.topics {
+        padding-left: 0;
+        display: block;
+      }
+
+      nav.curriculum-nav li.module ul.topics li.topic {
+        border: none;
+        padding: 0.3rem 0.5rem;
+        display: inline-block;
+        white-space: normal;
+      }
+
+      article.content-display {
+        max-height: none;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container" role="main" aria-label="Web Development Course Page">
+    <!-- Header -->
+    <!-- <header class="course-header" role="banner" aria-label="Course Title and Summary">
+      <div class="left">
+        <h1>Web Development</h1>
+        <div class="meta" aria-label="Course details">
+          <span title="Course Duration"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path
+                d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18.18A8.18 8.18 0 1 1 20.18 12 8.19 8.19 0 0 1 12 20.18zm.45-8.7V7a.75.75 0 0 0-1.5 0v5.6a.75.75 0 0 0 .45.68l4.5 2.25a.75.75 0 0 0 .75-1.3zm0 0" /></svg>16 Weeks</span>
+          <span title="Skill Level"><svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart"
+              viewBox="0 0 24 24" width="16" height="16"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18"
+                y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg> Beginner to Advanced</span>
+          <span title="Student Enrollment"><svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"
+              viewBox="0 0 24 24" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-3-3.87"></path><path
+                d="M7 21v-2a4 4 0 0 1 3-3.87"></path><circle cx="12" cy="7" r="4"></circle></svg> 45,000+ Students</span>
+        </div>
+
+        <div class="rating" aria-label="Course Rating: 4.9 out of 5 stars based on 6200 reviews" role="img" tabindex="0">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20">
+            <polygon
+              points="10 1.5 12.59 7.42 19 7.88 14 12.53 15.18 19 10 15.78 4.82 19 6 12.53 1 7.88 7.41 7.42">
+            </polygon>
+          </svg>
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20">
+            <polygon
+              points="10 1.5 12.59 7.42 19 7.88 14 12.53 15.18 19 10 15.78 4.82 19 6 12.53 1 7.88 7.41 7.42">
+            </polygon>
+          </svg>
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20">
+            <polygon
+              points="10 1.5 12.59 7.42 19 7.88 14 12.53 15.18 19 10 15.78 4.82 19 6 12.53 1 7.88 7.41 7.42">
+            </polygon>
+          </svg>
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20">
+            <polygon
+              points="10 1.5 12.59 7.42 19 7.88 14 12.53 15.18 19 10 15.78 4.82 19 6 12.53 1 7.88 7.41 7.42">
+            </polygon>
+          </svg>
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20">
+            <polygon
+              points="10 1.5 12.59 7.42 19 7.88 14 12.53 15.18 19 10 15.78 4.82 19 6 12.53 1 7.88 7.41 7.42"
+              style="opacity: 0.3;"></polygon>
+          </svg>
+          <span style="margin-left:0.4rem;">4.9 (6,200+ reviews)</span>
+        </div>
+      </div>
+      <div class="buttons" role="group" aria-label="Course action buttons">
+        <button type="button" class="btn-white" aria-label="Enroll Now in the course">Enroll Now</button>
+        <button type="button" class="btn-outline" aria-label="Preview the course">Preview Course</button>
+      </div>
+    </header> -->
+
+
+    <!-- Navigation Header -->
+    <header class="cyber-header">
+        <nav class="nav-container">
+            <div class="logo-container">
+                <img src="images/techxpert-terminal.png" alt="TechXpert Logo" class="cyber-logo" width="60" height="60">
+                <h1>Tech<b>X</b>pert</h1>
+            </div>
+            <!-- Hamburger Icon for Mobile (added for unified style) -->
+            <button class="hamburger" id="hamburger-menu" aria-label="Open menu" aria-controls="mobile-sidebar" aria-expanded="false">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+            <div class="cyber-search">
+                <input type="text" class="search-input" placeholder="Search Courses...">
+                <i class="fas fa-search"></i>
+            </div>
+            <nav class="nav-menu nav-links" id="main-menu" role="navigation" aria-label="Main menu">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <div class="dropdown">
+                    <a href="#" class="nav-link dropdown-trigger">Courses</a>
+                    <div class="dropdown-content">
+                        <div class="crse-wrapper">
+                            <div class="crse-col">
+                                <div id="side-icon">
+                                    <span class="crse-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                                    <div class="crse-title">COURSES</div>
+                                </div>
+                                <ul class="crse-list">
+                                    <li><a href="courses/web-development.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-code"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">WEB DEVELOPMENT</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="courses/cybersecurity.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-shield-halved"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">CYBERSECURITY</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="courses/software-development.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-laptop-code"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">SOFTWARE DEVELOPMENT</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="courses/ui-ux.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-palette"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">UI/UX</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="courses/data-analysis.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-chart-simple"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">Data Analysis</div>
+                                            </div>
+                                        </a>
+                                </ul>
+                            </div>
+                            <div class="crse-col">
+                                <div id="side-icon">
+                                    <span class="crse-icon"><i class="fa-solid fa-code"></i></span>
+                                    <div class="crse-title">PROGRAMMING LANGUAGES</div>
+                                </div>
+                                <ul class="crse-list">
+                                            <li><a href="Languages/javascript.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-js"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">JAVASCRIPT</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="Languages/rust.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-rust"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">RUST</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="Languages/solidity.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-cube"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">SOLIDITY</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="Languages/sql.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-database"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">SQL</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="Languages/php.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-php"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">PHP</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="Languages/python.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-python"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">PYTHON</div>
+                                            </div>
+                                        </a>
+                                </ul>
+                            </div>
+                            <div class="crse-col">
+                                <div id="side-icon">
+                                    <span class="crse-icon"><i class="fa-solid fa-layer-group"></i></span>
+                                    <div class="crse-title">FRAMEWORKS</div>
+                                </div>
+                                <ul class="crse-list">
+                                    <li><a href="frameworks/bootstrap.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-bootstrap"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">BOOTSTRAP</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="frameworks/tailwind.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-wind"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">TAILWIND</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="frameworks/django.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-python"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">DJANGO</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="frameworks/react.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-react"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">REACT JS</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="frameworks/node.html"><span class="crse-icon"><i
+                                                    class="fa-brands fa-node-js"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">NODE JS</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="frameworks/native.html"><span class="crse-icon"><i
+                                                    class="fa-solid fa-mobile-screen"></i></span>
+                                            <div class="crse-content">
+                                                <div class="crse-main">NATIVE</div>
+                                            </div>
+                                        </a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="explore-courses-btn" onclick="window.location.href='all-courses.html'">
+                            EXPLORE COURSES
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="nav-link">
+                    <div class="profile-dropdown">
+                        <div id="nav-pfp">
+                            <img src="images/pic-1.jpg" class="logo" alt="Profile Picture of Godswill Favour">
+                        </div>
+                        <div class="profile-dropdown-content">
+                            <div class="profile-header">
+                                <img src="images/pic-1.jpg" alt="Profile Picture of Godswill Favour">
+                                <div class="profile-info">
+                                    <h3>Godswill Favour</h3>
+                                    <p>Student</p>
+                                </div>
+                            </div>
+                            <ul class="profile-menu">
+                                <li><a href="#"><i class="fas fa-user"></i> My Profile</a></li>
+                                <li><a href="dashboard.html"><i class="fas fa-dashboard"></i> Dashboard</a></li>
+                                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                                <li><a href="#"><i class="fas fa-book"></i> My Courses</a></li>
+                                <li><a href="#"><i class="fas fa-certificate"></i> Certificates</a></li>
+                                <li class="theme-toggle">
+                                    <button class="theme-switch" aria-label="Toggle dark mode">
+                                        <span class="switch-track">
+                                            <span class="switch-icon moon"><i class="fas fa-moon"></i></span>
+                                            <span class="switch-icon sun"><i class="fas fa-sun"></i></span>
+                                            <span class="switch-knob"></span>
+                                        </span>
+                                    </button>
+                                </li>
+                                <li class="logout"><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+            </nav>
+        </nav>
+    </header>
+    <!-- Sidebar for Mobile (added for unified style) -->
+    <aside class="mobile-sidebar" id="mobile-sidebar" aria-hidden="true">
+        <div class="sidebar-header">
+            <span class="sidebar-logo"><img src="images/techxpert-terminal.png" alt="TechXpert Logo" width="40"><h1>Tech<b>X</b>pert</h1></span>
+            <button class="close-sidebar" id="close-sidebar" aria-label="Close menu">&times;</button>
+        </div>
+        <div class="sidebar-links">
+            <a href="home.html" class="sidebar-link">Home</a>
+            <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+            <div class="dropdown">
+                <a href="#" class="sidebar-link dropdown-trigger">Courses</a>
+                <div class="dropdown-content">
+                    <div class="crse-wrapper">
+                        <div class="crse-col">
+                            <div id="side-icon">
+                                <span class="crse-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                                <div class="crse-title">COURSES</div>
+                            </div>
+                            <ul class="crse-list">
+                                <li><a href="courses/web-development.html"><span class="crse-icon"><i class="fa-solid fa-code"></i></span><div class="crse-content"><div class="crse-main">WEB DEVELOPMENT</div></div></a></li>
+                                <li><a href="courses/cybersecurity.html"><span class="crse-icon"><i class="fa-solid fa-shield-halved"></i></span><div class="crse-content"><div class="crse-main">CYBERSECURITY</div></div></a></li>
+                                <li><a href="courses/software-development.html"><span class="crse-icon"><i class="fa-solid fa-laptop-code"></i></span><div class="crse-content"><div class="crse-main">SOFTWARE DEVELOPMENT</div></div></a></li>
+                                <li><a href="courses/ui-ux.html"><span class="crse-icon"><i class="fa-solid fa-palette"></i></span><div class="crse-content"><div class="crse-main">UI/UX</div></div></a></li>
+                                <li><a href="courses/data-analysis.html"><span class="crse-icon"><i class="fa-solid fa-chart-simple"></i></span><div class="crse-content"><div class="crse-main">Data Analysis</div></div></a></li>
+                            </ul>
+                        </div>
+                        <div class="crse-col">
+                            <div id="side-icon">
+                                <span class="crse-icon"><i class="fa-solid fa-code"></i></span>
+                                <div class="crse-title">PROGRAMMING LANGUAGES</div>
+                            </div>
+                            <ul class="crse-list">
+                                <li><a href="Languages/javascript.html"><span class="crse-icon"><i class="fa-brands fa-js"></i></span><div class="crse-content"><div class="crse-main">JAVASCRIPT</div></div></a></li>
+                                <li><a href="Languages/rust.html"><span class="crse-icon"><i class="fa-brands fa-rust"></i></span><div class="crse-content"><div class="crse-main">RUST</div></div></a></li>
+                                <li><a href="Languages/solidity.html"><span class="crse-icon"><i class="fa-solid fa-cube"></i></span><div class="crse-content"><div class="crse-main">SOLIDITY</div></div></a></li>
+                                <li><a href="Languages/sql.html"><span class="crse-icon"><i class="fa-solid fa-database"></i></span><div class="crse-content"><div class="crse-main">SQL</div></div></a></li>
+                                <li><a href="Languages/php.html"><span class="crse-icon"><i class="fa-brands fa-php"></i></span><div class="crse-content"><div class="crse-main">PHP</div></div></a></li>
+                                <li><a href="Languages/python.html"><span class="crse-icon"><i class="fa-brands fa-python"></i></span><div class="crse-content"><div class="crse-main">PYTHON</div></div></a></li>
+                            </ul>
+                        </div>
+                        <div class="crse-col">
+                            <div id="side-icon">
+                                <span class="crse-icon"><i class="fa-solid fa-layer-group"></i></span>
+                                <div class="crse-title">FRAMEWORKS</div>
+                            </div>
+                            <ul class="crse-list">
+                                <li><a href="frameworks/bootstrap.html"><span class="crse-icon"><i class="fa-brands fa-bootstrap"></i></span><div class="crse-content"><div class="crse-main">BOOTSTRAP</div></div></a></li>
+                                <li><a href="frameworks/tailwind.html"><span class="crse-icon"><i class="fa-solid fa-wind"></i></span><div class="crse-content"><div class="crse-main">TAILWIND</div></div></a></li>
+                                <li><a href="frameworks/django.html"><span class="crse-icon"><i class="fa-brands fa-python"></i></span><div class="crse-content"><div class="crse-main">DJANGO</div></div></a></li>
+                                <li><a href="frameworks/react.html"><span class="crse-icon"><i class="fa-brands fa-react"></i></span><div class="crse-content"><div class="crse-main">REACT JS</div></div></a></li>
+                                <li><a href="frameworks/node.html"><span class="crse-icon"><i class="fa-brands fa-node-js"></i></span><div class="crse-content"><div class="crse-main">NODE JS</div></div></a></li>
+                                <li><a href="frameworks/native.html"><span class="crse-icon"><i class="fa-solid fa-mobile-screen"></i></span><div class="crse-content"><div class="crse-main">NATIVE</div></div></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="explore-courses-btn" onclick="window.location.href='all-courses.html'">
+                        EXPLORE COURSES
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+
+    <!-- Course Overview -->
+    <section class="course-overview" aria-label="Course Overview Summary">
+      <h2>Course Overview</h2>
+      <p>Master modern web development from frontend to backend. Learn HTML, CSS, JavaScript, and popular frameworks to build
+        responsive, interactive web applications.</p>
+      <div class="card-container" role="list">
+        <article class="course-card" role="listitem" tabindex="0" aria-label="Frontend topic with HTML, CSS, JavaScript">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-hidden="true" focusable="false"
+            fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"
+            class="frontend-icon" width="48" height="48">
+            <path d="M20 12L6 32l14 20 M44 12l14 20-14 20" />
+            <polyline points="32 34 38 30 32 26" />
+          </svg>
+          <h3>Frontend</h3>
+          <span>HTML, CSS, JavaScript</span>
+        </article>
+
+        <article class="course-card" role="listitem" tabindex="0" aria-label="Backend topic covering Node.js & Databases">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" stroke="currentColor"
+            stroke-width="3" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 64 64" role="img"
+            aria-hidden="true" focusable="false" class="backend-icon">
+            <rect x="12" y="14" width="40" height="14" rx="2" ry="2" />
+            <rect x="12" y="36" width="40" height="14" rx="2" ry="2" />
+            <line x1="32" y1="14" x2="32" y2="50" />
+          </svg>
+          <h3>Backend</h3>
+          <span>Node.js & Databases</span>
+        </article>
+
+        <article class="course-card" role="listitem" tabindex="0" aria-label="Responsive design topic for mobile-first design">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" stroke="currentColor"
+            stroke-width="3" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 64 64" role="img"
+            aria-hidden="true" focusable="false" class="responsive-icon">
+            <rect x="22" y="10" width="20" height="44" rx="4" ry="4" />
+            <line x1="32" y1="52" x2="32" y2="58" />
+            <line x1="24" y1="18" x2="40" y2="18" />
+          </svg>
+          <h3>Responsive</h3>
+          <span>Mobile-first Design</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- Main Content: Sidebar + Curriculum Content -->
+    <div class="main-content" role="region" aria-label="Course Curriculum and Topics">
+      <!-- Navigation Sidebar -->
+      <nav class="curriculum-nav" aria-label="Course curriculum navigation" tabindex="0">
+
+        <h3>Curriculum</h3>
+
+        <ul>
+          <li class="module" aria-expanded="true" aria-label="Module 1: Frontend Fundamentals, 8 weeks">
+            <strong>Module 1: Frontend Fundamentals</strong>
+            <span class="duration">8 weeks</span>
+            <ul class="topics" role="list">
+              <li class="topic active" tabindex="0" role="button" aria-pressed="true" aria-label="HTML5 Structure & Semantics, 120 min">
+                <svg class="expand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <circle cx="12" cy="12" r="10" stroke="none" fill="var(--accent-yellow)"></circle>
+                  <polygon points="10,8 16,12 10,16" fill="black"></polygon>
+                </svg>
+                <span class="topic-title">HTML5 Structure & Semantics</span>
+                <span class="topic-duration">120 min</span>
+              </li>
+              <li class="topic" tabindex="0" role="button" aria-pressed="false" aria-label="CSS3 Styling & Layout, 150 min">
+                <svg class="expand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <circle cx="12" cy="12" r="10" fill="var(--accent-yellow)"></circle>
+                  <polygon points="10,8 16,12 10,16" fill="black"></polygon>
+                </svg>
+                <span class="topic-title">CSS3 Styling & Layout</span>
+                <span class="topic-duration">150 min</span>
+              </li>
+              <li class="topic" tabindex="0" role="button" aria-pressed="false" aria-label="Responsive Design, 180 min">
+                <svg class="expand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <circle cx="12" cy="12" r="10" fill="var(--accent-yellow)"></circle>
+                  <polygon points="10,8 16,12 10,16" fill="black"></polygon>
+                </svg>
+                <span class="topic-title">Responsive Design</span>
+                <span class="topic-duration">180 min</span>
+              </li>
+              <li class="topic" tabindex="0" role="button" aria-pressed="false" aria-label="JavaScript Basics, 200 min">
+                <svg class="expand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <circle cx="12" cy="12" r="10" fill="var(--accent-yellow)"></circle>
+                  <polygon points="10,8 16,12 10,16" fill="black"></polygon>
+                </svg>
+                <span class="topic-title">JavaScript Basics</span>
+                <span class="topic-duration">200 min</span>
+              </li>
+              <li class="topic" tabindex="0" role="button" aria-pressed="false" aria-label="DOM Manipulation, 150 min">
+                <svg class="expand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <circle cx="12" cy="12" r="10" fill="var(--accent-yellow)"></circle>
+                  <polygon points="10,8 16,12 10,16" fill="black"></polygon>
+                </svg>
+                <span class="topic-title">DOM Manipulation</span>
+                <span class="topic-duration">150 min</span>
+              </li>
+              <li class="topic" tabindex="0" role="button" aria-pressed="false" aria-label="ES6+ Features, 180 min">
+                <svg class="expand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <circle cx="12" cy="12" r="10" fill="var(--accent-yellow)"></circle>
+                  <polygon points="10,8 16,12 10,16" fill="black"></polygon>
+                </svg>
+                <span class="topic-title">ES6+ Features</span>
+                <span class="topic-duration">180 min</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Content Display Area -->
+      <article class="content-display" tabindex="0" aria-live="polite" aria-atomic="true" aria-label="Learning content">
+        <h2>HTML5 Structure & Semantics</h2>
+        <p>Understand the building blocks of modern web pages using HTML5. Learn about semantic elements that improve accessibility and SEO.</p>
+        <ul>
+          <li>Introduction to HTML5 and its evolution from older versions.</li>
+          <li>Understanding document structure: &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, &lt;section&gt;, &lt;footer&gt;.</li>
+          <li>Importance of semantic tags for SEO and accessibility.</li>
+          <li>Creating accessible and well-structured forms with semantic inputs.</li>
+          <li>Practical coding examples of building an HTML5 page.</li>
+        </ul>
+        <p><strong>Example snippet:</strong></p>
+        <pre><code>&lt;header&gt;
+  &lt;h1&gt;Welcome to My Site&lt;/h1&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Introduction&lt;/h2&gt;
+    &lt;p&gt;Some content here...&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;
+  &lt;p&gt;© 2024 MySite&lt;/p&gt;
+&lt;/footer&gt;
+</code></pre>
+ <button class="try-button" onclick="window.location.href='WEB-IDE/index.html'">Try it</button>
+      </article>
+    </div>
+
+    <!-- Try it button -->
+    <div class="text-center mt-8">
+      <article class="course-card" role="listitem" tabindex="0" aria-label="Try the Web IDE for hands-on coding practice">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="try-icon">
+          <path d="M12 2L2 7v10l10 5 10-5V7z"></path>
+          <polyline points="12 22 12 12"></polyline>
+          <polyline points="16 18 12 14 8 18"></polyline>
+        </svg>
+        <h3>Try the Web IDE</h3>
+        <span>Hands-on coding practice</span>
+ <a href="WEB-IDE/index.html" class="try-button">Try it</a>
+      </article>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const topics = document.querySelectorAll("nav.curriculum-nav ul.topics li.topic");
+      const contentDisplay = document.querySelector("article.content-display");
+
+      // Content for each topic keyed by topic title for strict matching
+      const courseContent = {
+        "HTML5 Structure & Semantics": `
+          <h2>HTML5 Structure & Semantics</h2>
+          <p>Understand the building blocks of modern web pages using HTML5. Learn about semantic elements that improve accessibility and SEO.</p>
+          <ul>
+            <li>Introduction to HTML5 and its evolution from older versions.</li>
+            <li>Understanding document structure: &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, &lt;section&gt;, &lt;footer&gt;.</li>
+            <li>Importance of semantic tags for SEO and accessibility.</li>
+            <li>Creating accessible and well-structured forms with semantic inputs.</li>
+            <li>Practical coding examples of building an HTML5 page.</li>
+          </ul>
+          <p><strong>Example snippet:</strong></p>
+          <pre><code>&lt;header&gt;
+  &lt;h1&gt;Welcome to My Site&lt;/h1&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Introduction&lt;/h2&gt;
+    &lt;p&gt;Some content here...&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;
+  &lt;p&gt;© 2024 MySite&lt;/p&gt;
+&lt;/footer&gt;
+</code></pre>`,
+
+        "CSS3 Styling & Layout": `
+          <h2>CSS3 Styling & Layout</h2>
+          <p>Learn how to style web pages efficiently using CSS3 including layouts, Flexbox, and Grid.</p>
+          <ul>
+            <li>Introduction to CSS3 and syntax.</li>
+            <li>Selectors, properties, and cascading rules.</li>
+            <li>Box model fundamentals (margin, border, padding).</li>
+            <li>Flexbox concepts for responsive horizontal and vertical alignment.</li>
+            <li>CSS Grid for two-dimensional layouts.</li>
+            <li>Media queries for responsive design adaptation.</li>
+          </ul>
+          <p><strong>Example snippet:</strong></p>
+          <pre><code>/* Flexbox simple centering */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</code></pre>`,
+
+        "Responsive Design": `
+          <h2>Responsive Design</h2>
+          <p>Understand techniques to build websites that look great on all devices using a mobile-first approach.</p>
+          <ul>
+            <li>Principles of responsive design and fluid grids.</li>
+            <li>Using media queries to change styles based on viewport size.</li>
+            <li>Flexible images and responsive typography.</li>
+            <li>Mobile-first design philosophy.</li>
+            <li>Viewport meta tag for mobile scaling.</li>
+            <li>Practical examples using breakpoints.</li>
+          </ul>
+          <p><strong>Example snippet:</strong></p>
+          <pre><code>@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .container {
+    padding: 10px;
+  }
+}
+</code></pre>`,
+
+        "JavaScript Basics": `
+          <h2>JavaScript Basics</h2>
+          <p>Get started with JavaScript programming fundamentals to add interactivity to web pages.</p>
+          <ul>
+            <li>Variables, data types, and operators.</li>
+            <li>Functions and scope.</li>
+            <li>Conditionals and loops.</li>
+            <li>Handling events in the browser.</li>
+            <li>Basic DOM manipulation.</li>
+            <li>Introduction to ES5 syntax and best practices.</li>
+          </ul>
+          <p><strong>Example snippet:</strong></p>
+          <pre><code>function greet(name) {
+  alert('Hello, ' + name + '!');
+}
+greet('Developer');
+</code></pre>`,
+
+        "DOM Manipulation": `
+          <h2>DOM Manipulation</h2>
+          <p>Learn how to programmatically interact with and change web page elements using JavaScript.</p>
+          <ul>
+            <li>Understanding the Document Object Model (DOM).</li>
+            <li>Selecting elements with querySelector and getElementById.</li>
+            <li>Changing element content and attributes.</li>
+            <li>Adding and removing elements dynamically.</li>
+            <li>Event listeners for user interactions.</li>
+            <li>Practical examples: creating interactive UI components.</li>
+          </ul>
+          <p><strong>Example snippet:</strong></p>
+          <pre><code>const btn = document.querySelector('button');
+btn.addEventListener('click', () => {
+  const p = document.createElement('p');
+  p.textContent = 'Button was clicked!';
+  document.body.appendChild(p);
+});
+</code></pre>`,
+
+        "ES6+ Features": `
+          <h2>ES6+ Features</h2>
+          <p>Explore modern JavaScript syntax and features introduced in ES6 and later versions for cleaner and more efficient code.</p>
+          <ul>
+            <li>let and const for variable declarations.</li>
+            <li>Arrow functions and concise syntax.</li>
+            <li>Template literals for string interpolation.</li>
+            <li>Destructuring arrays and objects.</li>
+            <li>Modules and import/export syntax.</li>
+            <li>Promises and async/await for asynchronous programming.</li>
+          </ul>
+          <p><strong>Example snippet:</strong></p>
+          <pre><code>const greet = (name) => {
+  console.log(`Hello, ${name}!`);
+};
+
+greet('Developer');
+</code></pre>`
+      };
+
+      // Clears active class and aria-pressed from all topics
+      function clearActiveTopics() {
+        topics.forEach(t => {
+          t.classList.remove("active");
+          t.setAttribute("aria-pressed", "false");
+          // Reset arrow icon to right-pointing
+          const svg = t.querySelector("svg.expand-icon polygon");
+          if (svg) {
+            svg.setAttribute("points", "10,8 16,12 10,16");
+          }
+          // Also circle fill remains yellow but polygon changes orientation
+        });
+      }
+
+      // Load content into main display area by topic
+      function loadContent(topicName) {
+        if (courseContent[topicName]) {
+          contentDisplay.innerHTML = courseContent[topicName];
+        } else {
+          contentDisplay.innerHTML = `<h2>${topicName}</h2><p>Content coming soon...</p>`;
+        }
+      }
+
+      // Handle click or keyboard action on topics
+      function onTopicSelected(event) {
+        let target = event.currentTarget;
+        if (!target.classList.contains("topic")) return;
+
+        clearActiveTopics();
+        target.classList.add("active");
+        target.setAttribute("aria-pressed", "true");
+
+        // Change arrow direction
+        const svg = target.querySelector("svg.expand-icon polygon");
+        if (svg) {
+          svg.setAttribute("points", "8,10 12,16 16,10"); // down-pointing triangle
+        }
+
+        // Load associated content
+        const topicName = target.querySelector(".topic-title").textContent.trim();
+        loadContent(topicName);
+      }
+
+      topics.forEach(topic => {
+        topic.addEventListener("click", onTopicSelected);
+        topic.addEventListener("keydown", e => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            onTopicSelected(e);
+            topic.focus();
+          }
+        });
+      });
+    })();
+  </script>
+
+
+
+
+<!-- VOICE FLOW AI ASSISTANT -->
+
+<script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '687097057f5efc148cd14893' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          voice: {
+            url: "https://runtime-api.voiceflow.com"
+          }
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+
+
+</body>
+
+</html>
+
